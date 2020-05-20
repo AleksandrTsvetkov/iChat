@@ -12,6 +12,8 @@
 		1F2B3BC02475688200632ECD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BBF2475688200632ECD /* SignUpViewController.swift */; };
 		1F2B3BC224756F2200632ECD /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC124756F2200632ECD /* OneLineTextField.swift */; };
 		1F2B3BC42475866000632ECD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC32475866000632ECD /* LoginViewController.swift */; };
+		1F2B3BC62475A94F00632ECD /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */; };
+		1F2B3BC82475AB5D00632ECD /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
 		1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABCA24752B74008A1E7B /* AuthViewController.swift */; };
@@ -31,6 +33,8 @@
 		1F2B3BBF2475688200632ECD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1F2B3BC124756F2200632ECD /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		1F2B3BC32475866000632ECD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
+		1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FFCABC824752B74008A1E7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +83,10 @@
 				1FFCABC624752B74008A1E7B /* AppDelegate.swift */,
 				1FFCABC824752B74008A1E7B /* SceneDelegate.swift */,
 				1FFCABCA24752B74008A1E7B /* AuthViewController.swift */,
+				1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */,
 				1F2B3BC32475866000632ECD /* LoginViewController.swift */,
 				1F2B3BBF2475688200632ECD /* SignUpViewController.swift */,
+				1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */,
 				1F2B3BBB24755EF500632ECD /* LabeledButton.swift */,
 				1F2B3BC124756F2200632ECD /* OneLineTextField.swift */,
 				1FFCABCF24752B76008A1E7B /* Assets.xcassets */,
@@ -186,6 +192,7 @@
 				1F2B3BC42475866000632ECD /* LoginViewController.swift in Sources */,
 				1FFCABE224754C9B008A1E7B /* UIButton + Initializer.swift in Sources */,
 				1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */,
+				1F2B3BC62475A94F00632ECD /* SetupProfileViewController.swift in Sources */,
 				1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */,
 				1F2B3BBE2475647D00632ECD /* StackView + Initializer.swift in Sources */,
 				1F2B3BBC24755EF500632ECD /* LabeledButton.swift in Sources */,
@@ -197,6 +204,7 @@
 				1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */,
 				1F2B3BC224756F2200632ECD /* OneLineTextField.swift in Sources */,
 				1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */,
+				1F2B3BC82475AB5D00632ECD /* AddPhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,19 +16,24 @@ class AuthViewController: UIViewController {
     private let emailLabel = UILabel(text: "Or sign up with")
     private let loginLabel = UILabel(text: "Already onboard?")
     
-    private let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
+    private let googleButton: UIButton = {
+        let button = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
+        button.customizeGoogleButton()
+        return button
+    }()
     private let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .buttonDark())
     private let loginButton = UIButton(title: "Login", titleColor: .buttonRed(), backgroundColor: .white, isShadow: true)
     
     private let logoImageView = UIImageView(image: UIImage(named: "Logo"), contentMode: .scaleAspectFit)
     
-    //MARK:
+    //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUserInterface()
     }
     
+    //MARK: SETUP
     private func setupUserInterface() {
         let googleLabeledButton = LabeledButton(label: googleLabel, button: googleButton)
         let emailLabeledButton = LabeledButton(label: emailLabel, button: emailButton)

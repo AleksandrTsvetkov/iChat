@@ -20,7 +20,11 @@ class LoginViewController: UIViewController {
     private let passwordTextField = OneLineTextField(font: .avenir20())
     private let passwordLabel = UILabel(text: "Password")
     private let needAnAccountLabel = UILabel(text: "Need an account?")
-    private let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
+    private let googleButton: UIButton = {
+        let button = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
+        button.customizeGoogleButton()
+        return button
+    }()
     private let loginButton = UIButton(title: "Login", titleColor: .white, backgroundColor: .buttonDark())
     private let signInButton: UIButton = {
         let button = UIButton()
@@ -71,7 +75,7 @@ class LoginViewController: UIViewController {
             bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
     }
-
+    
 }
 
 //MARK: CANVAS PREVIEW
