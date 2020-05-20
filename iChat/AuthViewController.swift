@@ -26,10 +26,10 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        addUserInterface()
+        setupUserInterface()
     }
     
-    private func addUserInterface() {
+    private func setupUserInterface() {
         let googleLabeledButton = LabeledButton(label: googleLabel, button: googleButton)
         let emailLabeledButton = LabeledButton(label: emailLabel, button: emailButton)
         let loginLabeledButton = LabeledButton(label: loginLabel, button: loginButton)
@@ -48,12 +48,11 @@ class AuthViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
-        
     }
 }
 
 //MARK: CANVAS PREVIEW
-struct AuthViewControllerProvider: PreviewProvider {
+struct AuthVCProvider: PreviewProvider {
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)
     }

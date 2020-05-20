@@ -22,4 +22,8 @@ extension UIColor {
         return UIColor(hex: "333333")
     }
     
+    static func textFieldLight() -> UIColor {
+        return UIColor(hex: "E6E6E6")
+    }
+    
 }
