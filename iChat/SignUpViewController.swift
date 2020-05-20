@@ -30,11 +30,13 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUserInterface()
     }
     
+    //MARK: SETUP
     private func setupUserInterface() {
         view.backgroundColor = .white
         let emailStackView = UIStackView(arrangedSubviews: [emailLabel, emailTextField], axis: .vertical, spacing: 0)
