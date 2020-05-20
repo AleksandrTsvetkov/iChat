@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2B3BBC24755EF500632ECD /* LabeledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BBB24755EF500632ECD /* LabeledButton.swift */; };
+		1F2B3BBE2475647D00632ECD /* StackView + Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BBD2475647D00632ECD /* StackView + Initializer.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
 		1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABCA24752B74008A1E7B /* AuthViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F2B3BBB24755EF500632ECD /* LabeledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledButton.swift; sourceTree = "<group>"; };
+		1F2B3BBD2475647D00632ECD /* StackView + Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Initializer.swift"; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FFCABC824752B74008A1E7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 				1FFCABC624752B74008A1E7B /* AppDelegate.swift */,
 				1FFCABC824752B74008A1E7B /* SceneDelegate.swift */,
 				1FFCABCA24752B74008A1E7B /* AuthViewController.swift */,
+				1F2B3BBB24755EF500632ECD /* LabeledButton.swift */,
 				1FFCABCF24752B76008A1E7B /* Assets.xcassets */,
 				1FFCABD124752B76008A1E7B /* LaunchScreen.storyboard */,
 				1FFCABD424752B76008A1E7B /* Info.plist */,
@@ -86,6 +91,7 @@
 				1FFCABDE24754C9B008A1E7B /* UIColor + Extension.swift */,
 				1FFCABDF24754C9B008A1E7B /* UIFont + Avenir.swift */,
 				1FFCABE024754C9B008A1E7B /* UIImageView + Initializer.swift */,
+				1F2B3BBD2475647D00632ECD /* StackView + Initializer.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -171,6 +177,8 @@
 				1FFCABE224754C9B008A1E7B /* UIButton + Initializer.swift in Sources */,
 				1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */,
 				1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */,
+				1F2B3BBE2475647D00632ECD /* StackView + Initializer.swift in Sources */,
+				1F2B3BBC24755EF500632ECD /* LabeledButton.swift in Sources */,
 				1FFCABE324754C9B008A1E7B /* UIColor + Extension.swift in Sources */,
 				1FFCABE524754C9B008A1E7B /* UIImageView + Initializer.swift in Sources */,
 				1FFCABE124754C9B008A1E7B /* Label + Initializer.swift in Sources */,
