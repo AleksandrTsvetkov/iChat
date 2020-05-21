@@ -10,14 +10,15 @@ import UIKit
 import SwiftUI
 
 fileprivate enum Section: Int, CaseIterable {
+    case waitingChats
     case activeChats
 }
 
-fileprivate struct ChatPreview: Hashable {
-    var userName: String
-    var userImage: UIImage?
-    var lastMeassage: String
-    var id = UUID()
+fileprivate struct ChatPreview: Hashable, Decodable {
+    var username: String
+    var userImageString: String
+    var lastMessage: String
+    var id: Int
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -31,12 +32,8 @@ fileprivate struct ChatPreview: Hashable {
 class ConversationsViewController: UIViewController {
     
     //MARK: PROPERTIES
-    private let chatPreviews: Array<ChatPreview> = [
-        ChatPreview(userName: "Alexey", userImage: UIImage(named: "human1"), lastMeassage: "How are you?"),
-        ChatPreview(userName: "Bob", userImage: UIImage(named: "human2"), lastMeassage: "How are you?"),
-        ChatPreview(userName: "Misha", userImage: UIImage(named: "human3"), lastMeassage: "How are you?"),
-        ChatPreview(userName: "Mila", userImage: UIImage(named: "human4"), lastMeassage: "How are you?")
-    ]
+    private let activeChatPreviews = Bundle.main.decode(Array<ChatPreview>.self, from: "activeChats.json")
+    private let waitingChatPreviews = Bundle.main.decode(Array<ChatPreview>.self, from: "waitingChats.json")
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, ChatPreview>?
 
@@ -47,6 +44,13 @@ class ConversationsViewController: UIViewController {
         setupCollectionView()
         createDataSource()
         reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let height: CGFloat = 0
+        let bounds = self.navigationController!.navigationBar.bounds
+        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
     }
     
     //MARK: SETUP
@@ -66,23 +70,49 @@ class ConversationsViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell1")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell2")
     }
-
+    
+    //MARK: COMPOSITIONAL LAYOUT METHODS
     private func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                  heightDimension: .fractionalHeight(1))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                   heightDimension: .absolute(84))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0)
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 0, trailing: 20)
-            return section
+            guard let section = Section(rawValue: sectionIndex) else { fatalError("Unkown section")}
+            switch section {
+            case .activeChats:
+                return self.createPreviewsForActiveChats()
+            case .waitingChats:
+                return self.createPreviewsForWaitingChats()
+            }
         }
         return layout
+    }
+    
+    private func createPreviewsForActiveChats() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .absolute(66))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 8
+        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 0, trailing: 20)
+        return section
+    }
+    
+    private func createPreviewsForWaitingChats() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(80),
+                                               heightDimension: .absolute(80))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.interGroupSpacing = 10
+        section.contentInsets = NSDirectionalEdgeInsets(top: -20, leading: 20, bottom: 0, trailing: 20)
+        return section
     }
     
     //MARK: DATA SOURCE METHODS
@@ -91,8 +121,12 @@ class ConversationsViewController: UIViewController {
             guard let section = Section(rawValue: indexPath.section) else { fatalError("Unkown section")}
             switch section {
             case .activeChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell1", for: indexPath)
                 cell.backgroundColor = .systemBlue
+                return cell
+            case .waitingChats:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath)
+                cell.backgroundColor = .systemRed
                 return cell
             }
         })
@@ -100,8 +134,9 @@ class ConversationsViewController: UIViewController {
     
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, ChatPreview>()
-        snapshot.appendSections([.activeChats])
-        snapshot.appendItems(chatPreviews, toSection: .activeChats)
+        snapshot.appendSections([.waitingChats, .activeChats])
+        snapshot.appendItems(activeChatPreviews, toSection: .activeChats)
+        snapshot.appendItems(waitingChatPreviews, toSection: .waitingChats)
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
