@@ -14,6 +14,7 @@ class PeopleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
+        view.backgroundColor = .white
     }
     
     private func setupSearchBar() {

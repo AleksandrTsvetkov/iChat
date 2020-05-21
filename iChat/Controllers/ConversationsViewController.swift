@@ -9,15 +9,47 @@
 import UIKit
 import SwiftUI
 
-class ConversationsViewController: UIViewController {
-    
-    private var collectionView: UICollectionView!
+fileprivate enum Section: Int, CaseIterable {
+    case activeChats
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupCollectionView()
+fileprivate struct ChatPreview: Hashable {
+    var userName: String
+    var userImage: UIImage?
+    var lastMeassage: String
+    var id = UUID()
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
     
+    static func == (lhs: ChatPreview, rhs: ChatPreview) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
+class ConversationsViewController: UIViewController {
+    
+    //MARK: PROPERTIES
+    private let chatPreviews: Array<ChatPreview> = [
+        ChatPreview(userName: "Alexey", userImage: UIImage(named: "human1"), lastMeassage: "How are you?"),
+        ChatPreview(userName: "Bob", userImage: UIImage(named: "human2"), lastMeassage: "How are you?"),
+        ChatPreview(userName: "Misha", userImage: UIImage(named: "human3"), lastMeassage: "How are you?"),
+        ChatPreview(userName: "Mila", userImage: UIImage(named: "human4"), lastMeassage: "How are you?")
+    ]
+    private var collectionView: UICollectionView!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, ChatPreview>?
+
+    //MARK: VIEW LIFCYCLE
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupSearchBar()
+        setupCollectionView()
+        createDataSource()
+        reloadData()
+    }
+    
+    //MARK: SETUP
     private func setupSearchBar() {
         navigationController?.navigationBar.barTintColor = .mainWhite()
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -35,10 +67,8 @@ class ConversationsViewController: UIViewController {
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
-    
+
     private func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
@@ -54,20 +84,25 @@ class ConversationsViewController: UIViewController {
         }
         return layout
     }
-}
-
-//MARK: UICollectionViewDelegate, UICollectionViewDataSource
-extension ConversationsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+    //MARK: DATA SOURCE METHODS
+    private func createDataSource() {
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chatPreview) -> UICollectionViewCell? in
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unkown section")}
+            switch section {
+            case .activeChats:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+                cell.backgroundColor = .systemBlue
+                return cell
+            }
+        })
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = .red
-        cell.layer.borderWidth = 1
-        return cell
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ChatPreview>()
+        snapshot.appendSections([.activeChats])
+        snapshot.appendItems(chatPreviews, toSection: .activeChats)
+        dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
 
