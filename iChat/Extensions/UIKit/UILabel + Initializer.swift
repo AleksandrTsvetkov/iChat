@@ -1,5 +1,5 @@
 //
-//  Label + Initializer.swift
+//  UILabel + Initializer.swift
 //  iChat
 //
 //  Created by Александр Цветков on 20.05.2020.
