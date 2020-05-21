@@ -15,6 +15,9 @@
 		1F2B3BC62475A94F00632ECD /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */; };
 		1F2B3BC82475AB5D00632ECD /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */; };
 		1F632FEB2476B77B00C53929 /* UISegmentedControl + Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */; };
+		1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FF02476C16000C53929 /* MainTabBarController.swift */; };
+		1F632FF32476C19C00C53929 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FF22476C19C00C53929 /* PeopleViewController.swift */; };
+		1F632FF52476C1F600C53929 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FF42476C1F600C53929 /* ConversationsViewController.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
 		1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABCA24752B74008A1E7B /* AuthViewController.swift */; };
@@ -37,6 +40,9 @@
 		1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl + Initializer.swift"; sourceTree = "<group>"; };
+		1F632FF02476C16000C53929 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		1F632FF22476C19C00C53929 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		1F632FF42476C1F600C53929 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FFCABC824752B74008A1E7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F632FEC2476C06100C53929 /* SignIn&Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1FFCABCA24752B74008A1E7B /* AuthViewController.swift */,
+				1F2B3BBF2475688200632ECD /* SignUpViewController.swift */,
+				1F2B3BC32475866000632ECD /* LoginViewController.swift */,
+				1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */,
+			);
+			path = "SignIn&Auth";
+			sourceTree = "<group>";
+		};
+		1F632FED2476C12600C53929 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FFCABC624752B74008A1E7B /* AppDelegate.swift */,
+				1FFCABC824752B74008A1E7B /* SceneDelegate.swift */,
+				1FFCABCF24752B76008A1E7B /* Assets.xcassets */,
+				1FFCABD124752B76008A1E7B /* LaunchScreen.storyboard */,
+				1FFCABD424752B76008A1E7B /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F632FEE2476C13700C53929 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */,
+				1F2B3BBB24755EF500632ECD /* LabeledButton.swift */,
+				1F2B3BC124756F2200632ECD /* OneLineTextField.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		1F632FEF2476C14300C53929 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F632FF02476C16000C53929 /* MainTabBarController.swift */,
+				1F632FF22476C19C00C53929 /* PeopleViewController.swift */,
+				1F632FF42476C1F600C53929 /* ConversationsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		1FFCABBA24752B74008A1E7B = {
 			isa = PBXGroup;
 			children = (
@@ -82,18 +131,10 @@
 		1FFCABC524752B74008A1E7B /* iChat */ = {
 			isa = PBXGroup;
 			children = (
-				1FFCABC624752B74008A1E7B /* AppDelegate.swift */,
-				1FFCABC824752B74008A1E7B /* SceneDelegate.swift */,
-				1FFCABCA24752B74008A1E7B /* AuthViewController.swift */,
-				1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */,
-				1F2B3BC32475866000632ECD /* LoginViewController.swift */,
-				1F2B3BBF2475688200632ECD /* SignUpViewController.swift */,
-				1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */,
-				1F2B3BBB24755EF500632ECD /* LabeledButton.swift */,
-				1F2B3BC124756F2200632ECD /* OneLineTextField.swift */,
-				1FFCABCF24752B76008A1E7B /* Assets.xcassets */,
-				1FFCABD124752B76008A1E7B /* LaunchScreen.storyboard */,
-				1FFCABD424752B76008A1E7B /* Info.plist */,
+				1F632FEF2476C14300C53929 /* Controllers */,
+				1F632FEC2476C06100C53929 /* SignIn&Auth */,
+				1F632FEE2476C13700C53929 /* Custom Views */,
+				1F632FED2476C12600C53929 /* Supporting Files */,
 				1FFCABE72475598A008A1E7B /* Extensions */,
 			);
 			path = iChat;
@@ -194,8 +235,10 @@
 			files = (
 				1F2B3BC42475866000632ECD /* LoginViewController.swift in Sources */,
 				1FFCABE224754C9B008A1E7B /* UIButton + Initializer.swift in Sources */,
+				1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */,
 				1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */,
 				1F2B3BC62475A94F00632ECD /* SetupProfileViewController.swift in Sources */,
+				1F632FF32476C19C00C53929 /* PeopleViewController.swift in Sources */,
 				1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */,
 				1F2B3BBE2475647D00632ECD /* UIStackView + Initializer.swift in Sources */,
 				1F2B3BBC24755EF500632ECD /* LabeledButton.swift in Sources */,
@@ -208,6 +251,7 @@
 				1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */,
 				1F2B3BC224756F2200632ECD /* OneLineTextField.swift in Sources */,
 				1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */,
+				1F632FF52476C1F600C53929 /* ConversationsViewController.swift in Sources */,
 				1F2B3BC82475AB5D00632ECD /* AddPhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,7 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4RLTSR7RF;
-				INFOPLIST_FILE = iChat/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iChat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,7 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4RLTSR7RF;
-				INFOPLIST_FILE = iChat/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iChat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
