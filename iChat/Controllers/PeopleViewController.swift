@@ -11,12 +11,14 @@ import SwiftUI
 
 class PeopleViewController: UIViewController {
 
+    //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
         view.backgroundColor = .white
     }
     
+    //MARK: SETUP
     private func setupSearchBar() {
         navigationController?.navigationBar.barTintColor = .mainWhite()
         navigationController?.navigationBar.shadowImage = UIImage()
