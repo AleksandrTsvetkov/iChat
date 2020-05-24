@@ -20,6 +20,7 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
         super.init(frame: frame)
         self.layer.cornerRadius = 4
         self.clipsToBounds = true
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -28,11 +29,19 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     //MARK: SETUP CELL
     func configure(with value: ChatPreview) {
-        
+        friendImageView.image = UIImage(named: value.userImageString)
     }
     
     private func setupConstraints() {
+        friendImageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(friendImageView)
         
+        NSLayoutConstraint.activate([
+            friendImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            friendImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            friendImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            friendImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
     }
 }
 
