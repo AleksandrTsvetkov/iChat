@@ -13,18 +13,25 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     //MARK: PROPERTIES
     static var reuseId: String = "WaitingChatCell"
+    private let friendImageView = UIImageView()
     
     //MARK: VIEW LIFECYCLE
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.layer.cornerRadius = 4
+        self.clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: SETUP
+    //MARK: SETUP CELL
     func configure(with value: ChatPreview) {
+        
+    }
+    
+    private func setupConstraints() {
         
     }
 }

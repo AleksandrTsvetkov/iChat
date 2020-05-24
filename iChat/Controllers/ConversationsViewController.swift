@@ -9,26 +9,6 @@
 import UIKit
 import SwiftUI
 
-fileprivate enum Section: Int, CaseIterable {
-    case waitingChats
-    case activeChats
-}
-
-struct ChatPreview: Hashable, Decodable {
-    var username: String
-    var userImageString: String
-    var lastMessage: String
-    var id: Int
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: ChatPreview, rhs: ChatPreview) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
 class ConversationsViewController: UIViewController {
     
     //MARK: PROPERTIES
@@ -124,9 +104,7 @@ class ConversationsViewController: UIViewController {
             case .activeChats:
                 return self.configure(cellType: ActiveChatCell.self, with: chatPreview, for: indexPath)
             case .waitingChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath)
-                cell.backgroundColor = .systemRed
-                return cell
+                return self.configure(cellType: WaitingChatCell.self, with: chatPreview, for: indexPath)
             }
         })
     }
@@ -144,6 +122,11 @@ class ConversationsViewController: UIViewController {
             else { fatalError("Unable to dequeue \(cellType)") }
         cell.configure(with: value)
         return cell
+    }
+    
+    enum Section: Int, CaseIterable {
+        case waitingChats
+        case activeChats
     }
 }
 

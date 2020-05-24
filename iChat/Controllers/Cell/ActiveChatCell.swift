@@ -9,11 +9,6 @@
 import UIKit
 import SwiftUI
 
-protocol SelfConfiguringCell {
-    static var reuseId: String { get }
-    func configure(with value: ChatPreview)
-}
-
 class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     //MARK: PROPERTIES
@@ -26,7 +21,7 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
     //MARK: INITIALIZERS
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUserInterface()
+        setupConstraints()
         self.layer.cornerRadius = 4
         self.clipsToBounds = true
     }
@@ -36,7 +31,7 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     //MARK: SETUP CELL
-    private func setupUserInterface() {
+    private func setupConstraints() {
         friendImageView.translatesAutoresizingMaskIntoConstraints = false
         friendNameLabel.translatesAutoresizingMaskIntoConstraints = false
         lastMessageLabel.translatesAutoresizingMaskIntoConstraints = false

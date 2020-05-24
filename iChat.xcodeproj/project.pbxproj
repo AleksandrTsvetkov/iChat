@@ -10,6 +10,7 @@
 		1F1C719E2477F452003F3780 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C719D2477F452003F3780 /* ActiveChatCell.swift */; };
 		1F1C71A02478039A003F3780 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C719F2478039A003F3780 /* GradientView.swift */; };
 		1F1C71A224780778003F3780 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C71A124780778003F3780 /* WaitingChatCell.swift */; };
+		1F1C71A42478087A003F3780 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C71A32478087A003F3780 /* SelfConfiguringCell.swift */; };
 		1F2B3BBC24755EF500632ECD /* LabeledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BBB24755EF500632ECD /* LabeledButton.swift */; };
 		1F2B3BBE2475647D00632ECD /* UIStackView + Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BBD2475647D00632ECD /* UIStackView + Initializer.swift */; };
 		1F2B3BC02475688200632ECD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BBF2475688200632ECD /* SignUpViewController.swift */; };
@@ -24,6 +25,7 @@
 		1FA161932476FDCE002906C3 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FA161912476FDCE002906C3 /* activeChats.json */; };
 		1FA161942476FDCE002906C3 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FA161922476FDCE002906C3 /* waitingChats.json */; };
 		1FA161962476FE44002906C3 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA161952476FE44002906C3 /* Bundle-Decodable.swift */; };
+		1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE027F724780A6F00F19FA0 /* ChatPreview.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
 		1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABCA24752B74008A1E7B /* AuthViewController.swift */; };
@@ -41,6 +43,7 @@
 		1F1C719D2477F452003F3780 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		1F1C719F2478039A003F3780 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		1F1C71A124780778003F3780 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
+		1F1C71A32478087A003F3780 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		1F2B3BBB24755EF500632ECD /* LabeledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledButton.swift; sourceTree = "<group>"; };
 		1F2B3BBD2475647D00632ECD /* UIStackView + Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Initializer.swift"; sourceTree = "<group>"; };
 		1F2B3BBF2475688200632ECD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		1FA161912476FDCE002906C3 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		1FA161922476FDCE002906C3 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		1FA161952476FE44002906C3 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		1FE027F724780A6F00F19FA0 /* ChatPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPreview.swift; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FFCABC824752B74008A1E7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,15 @@
 				1F1C71A124780778003F3780 /* WaitingChatCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		1F1C71A52478090C003F3780 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1F1C71A32478087A003F3780 /* SelfConfiguringCell.swift */,
+				1FE027F724780A6F00F19FA0 /* ChatPreview.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1F632FEC2476C06100C53929 /* SignIn&Auth */ = {
@@ -160,6 +173,7 @@
 				1F632FEC2476C06100C53929 /* SignIn&Auth */,
 				1F632FEE2476C13700C53929 /* Custom Views */,
 				1F632FED2476C12600C53929 /* Supporting Files */,
+				1F1C71A52478090C003F3780 /* Models */,
 				1FFCABE72475598A008A1E7B /* Extensions */,
 			);
 			path = iChat;
@@ -263,6 +277,7 @@
 			files = (
 				1F2B3BC42475866000632ECD /* LoginViewController.swift in Sources */,
 				1F1C71A02478039A003F3780 /* GradientView.swift in Sources */,
+				1F1C71A42478087A003F3780 /* SelfConfiguringCell.swift in Sources */,
 				1FFCABE224754C9B008A1E7B /* UIButton + Initializer.swift in Sources */,
 				1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */,
 				1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */,
@@ -280,6 +295,7 @@
 				1FFCABE424754C9B008A1E7B /* UIFont + Fonts.swift in Sources */,
 				1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */,
 				1F2B3BC224756F2200632ECD /* OneLineTextField.swift in Sources */,
+				1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */,
 				1F1C71A224780778003F3780 /* WaitingChatCell.swift in Sources */,
 				1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */,
 				1F1C719E2477F452003F3780 /* ActiveChatCell.swift in Sources */,
