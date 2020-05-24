@@ -16,41 +16,53 @@ class ConversationsViewController: UIViewController {
     private let waitingChatPreviews = Bundle.main.decode(Array<ChatPreview>.self, from: "waitingChats.json")
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, ChatPreview>?
+    private let titleView = UIView()
+    private let contentView = UIView()
+    private let searchBar = UISearchBar()
+    
     
     //MARK: VIEW LIFCYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSearchBar()
         setupCollectionView()
+        setupSearchBar()
         createDataSource()
         reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        guard let bounds = self.navigationController?.navigationBar.bounds else { return }
-        let height = bounds.height
-        let width = bounds.width
-        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: width, height: height)
-    }
-    
     //MARK: SETUP
     private func setupSearchBar() {
-        navigationController?.navigationBar.barTintColor = .mainWhite()
-        navigationController?.navigationBar.shadowImage = UIImage()
-        let searchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.delegate = self
+        navigationController?.navigationBar.isHidden = true
+        searchBar.delegate = self
+        searchBar.placeholder = "Search"
+        searchBar.showsScopeBar = true
+        titleView.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(titleView)
+        titleView.addSubview(searchBar)
+        NSLayoutConstraint.activate([
+            titleView.topAnchor.constraint(equalTo: view.topAnchor),
+            titleView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            titleView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            titleView.heightAnchor.constraint(equalToConstant: 80),
+            
+            searchBar.heightAnchor.constraint(equalToConstant: 60),
+            searchBar.bottomAnchor.constraint(equalTo: titleView.bottomAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 10),
+            searchBar.trailingAnchor.constraint(equalTo: titleView.trailingAnchor)
+        ])
+        titleView.backgroundColor = .mainWhite()
+        searchBar.backgroundImage = UIImage()
     }
     
     private func setupCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+        contentView.frame = CGRect(x: 0, y: 0 + 80, width: view.frame.width, height: view.bounds.height)
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: createCompositionalLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .mainWhite()
-        view.addSubview(collectionView)
+        view.addSubview(contentView)
+        contentView.addSubview(collectionView)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
         collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseId)
     }
@@ -66,6 +78,9 @@ class ConversationsViewController: UIViewController {
                 return self.createPreviewsForWaitingChats()
             }
         }
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
         return layout
     }
     
@@ -79,6 +94,8 @@ class ConversationsViewController: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 8
         section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 0, trailing: 10)
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
     
@@ -92,8 +109,19 @@ class ConversationsViewController: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.interGroupSpacing = 10
-        section.contentInsets = NSDirectionalEdgeInsets(top: -20, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20)
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
+    }
+    
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                       heightDimension: .estimated(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize,
+                                                                        elementKind: UICollectionView.elementKindSectionHeader,
+                                                                        alignment: .topLeading)
+        return sectionHeader
     }
     
     //MARK: DATA SOURCE METHODS
@@ -107,6 +135,12 @@ class ConversationsViewController: UIViewController {
                 return self.configure(cellType: WaitingChatCell.self, with: chatPreview, for: indexPath)
             }
         })
+        dataSource?.supplementaryViewProvider = { collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader else { fatalError("Cannot create new section header") }
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind")}
+            sectionHeader.confgure(text: section.description(), font: .laoSangamMN20(), textColor: UIColor(hex: "929292"))
+            return sectionHeader
+        }
     }
     
     private func reloadData() {
@@ -127,13 +161,33 @@ class ConversationsViewController: UIViewController {
     enum Section: Int, CaseIterable {
         case waitingChats
         case activeChats
+        
+        func description() -> String {
+            switch self {
+            case .waitingChats:
+                return "Waiting chats"
+            case .activeChats:
+                return "Active chats"
+            }
+        }
     }
 }
 
 //MARK: UISearchBarDelegate
 extension ConversationsViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
     }
 }
 

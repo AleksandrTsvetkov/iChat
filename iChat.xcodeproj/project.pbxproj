@@ -25,6 +25,7 @@
 		1FA161932476FDCE002906C3 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FA161912476FDCE002906C3 /* activeChats.json */; };
 		1FA161942476FDCE002906C3 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FA161922476FDCE002906C3 /* waitingChats.json */; };
 		1FA161962476FE44002906C3 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA161952476FE44002906C3 /* Bundle-Decodable.swift */; };
+		1FAFF8D7247AA34B00F967FA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */; };
 		1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE027F724780A6F00F19FA0 /* ChatPreview.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
@@ -58,6 +59,7 @@
 		1FA161912476FDCE002906C3 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		1FA161922476FDCE002906C3 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		1FA161952476FE44002906C3 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		1FE027F724780A6F00F19FA0 /* ChatPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPreview.swift; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				1F632FF02476C16000C53929 /* MainTabBarController.swift */,
 				1F632FF22476C19C00C53929 /* PeopleViewController.swift */,
 				1F632FF42476C1F600C53929 /* ConversationsViewController.swift */,
+				1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				1F1C71A42478087A003F3780 /* SelfConfiguringCell.swift in Sources */,
 				1FFCABE224754C9B008A1E7B /* UIButton + Initializer.swift in Sources */,
 				1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */,
+				1FAFF8D7247AA34B00F967FA /* SectionHeader.swift in Sources */,
 				1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */,
 				1F2B3BC62475A94F00632ECD /* SetupProfileViewController.swift in Sources */,
 				1FA161962476FE44002906C3 /* Bundle-Decodable.swift in Sources */,
