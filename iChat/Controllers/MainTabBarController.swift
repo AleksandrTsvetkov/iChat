@@ -21,8 +21,8 @@ class MainTabBarController: UITabBarController {
         let peopleViewController = PeopleViewController()
         
         viewControllers = [
-            generateNavigationController(rootViewController: conversationsViewController, title: "Conversations", image: convImage),
-            generateNavigationController(rootViewController: peopleViewController, title: "People", image: peopleImage)
+            generateNavigationController(rootViewController: peopleViewController, title: "People", image: peopleImage),
+            generateNavigationController(rootViewController: conversationsViewController, title: "Conversations", image: convImage)
         ]
     }
     

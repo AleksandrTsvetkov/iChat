@@ -35,7 +35,6 @@ class ConversationsViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         searchBar.delegate = self
         searchBar.placeholder = "Search"
-        searchBar.showsScopeBar = true
         titleView.translatesAutoresizingMaskIntoConstraints = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleView)

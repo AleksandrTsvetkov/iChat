@@ -38,6 +38,8 @@
 		1FFCABE424754C9B008A1E7B /* UIFont + Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABDF24754C9B008A1E7B /* UIFont + Fonts.swift */; };
 		1FFCABE524754C9B008A1E7B /* UIImageView + Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABE024754C9B008A1E7B /* UIImageView + Initializer.swift */; };
 		1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABE824755A2E008A1E7B /* UIColor + HexValue.swift */; };
+		1FFD08A1247ADF8E00535591 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FFD08A0247ADF8E00535591 /* users.json */; };
+		1FFD08A3247ADFE000535591 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFD08A2247ADFE000535591 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		1FFCABDF24754C9B008A1E7B /* UIFont + Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont + Fonts.swift"; sourceTree = "<group>"; };
 		1FFCABE024754C9B008A1E7B /* UIImageView + Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView + Initializer.swift"; sourceTree = "<group>"; };
 		1FFCABE824755A2E008A1E7B /* UIColor + HexValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + HexValue.swift"; sourceTree = "<group>"; };
+		1FFD08A0247ADF8E00535591 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		1FFD08A2247ADFE000535591 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			children = (
 				1F1C71A32478087A003F3780 /* SelfConfiguringCell.swift */,
 				1FE027F724780A6F00F19FA0 /* ChatPreview.swift */,
+				1FFD08A2247ADFE000535591 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				1FFCABD424752B76008A1E7B /* Info.plist */,
 				1FA161912476FDCE002906C3 /* activeChats.json */,
 				1FA161922476FDCE002906C3 /* waitingChats.json */,
+				1FFD08A0247ADF8E00535591 /* users.json */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,11 +150,11 @@
 		1F632FEF2476C14300C53929 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1FFD089F247ADF3B00535591 /* Header */,
 				1F1C719C2477F433003F3780 /* Cell */,
 				1F632FF02476C16000C53929 /* MainTabBarController.swift */,
 				1F632FF22476C19C00C53929 /* PeopleViewController.swift */,
 				1F632FF42476C1F600C53929 /* ConversationsViewController.swift */,
-				1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +210,14 @@
 				1FFCABE62475597E008A1E7B /* UIKit */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1FFD089F247ADF3B00535591 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FFD08A1247ADF8E00535591 /* users.json in Resources */,
 				1FFCABD324752B76008A1E7B /* LaunchScreen.storyboard in Resources */,
 				1FA161932476FDCE002906C3 /* activeChats.json in Resources */,
 				1FFCABD024752B76008A1E7B /* Assets.xcassets in Resources */,
@@ -300,6 +315,7 @@
 				1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */,
 				1F2B3BC224756F2200632ECD /* OneLineTextField.swift in Sources */,
 				1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */,
+				1FFD08A3247ADFE000535591 /* UserModel.swift in Sources */,
 				1F1C71A224780778003F3780 /* WaitingChatCell.swift in Sources */,
 				1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */,
 				1F1C719E2477F452003F3780 /* ActiveChatCell.swift in Sources */,

@@ -10,29 +10,144 @@ import UIKit
 import SwiftUI
 
 class PeopleViewController: UIViewController {
-
+    
+    //MARK: PROPERTIES
+    private let users = Bundle.main.decode(Array<UserModel>.self, from: "users.json")
+    private var collectionView: UICollectionView!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, UserModel>?
+    private let titleView = UIView()
+    private let searchBar = UISearchBar()
+    private let contentView = UIView()
+    
     //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSearchBar()
         view.backgroundColor = .white
+        setupSearchBar()
+        setupCollectionView()
+        createDataSource()
+        reloadData()
     }
     
     //MARK: SETUP
     private func setupSearchBar() {
-        navigationController?.navigationBar.barTintColor = .mainWhite()
-        navigationController?.navigationBar.shadowImage = UIImage()
-        let searchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.delegate = self
+        navigationController?.navigationBar.isHidden = true
+        searchBar.delegate = self
+        searchBar.placeholder = "Search"
+        titleView.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(titleView)
+        titleView.addSubview(searchBar)
+        NSLayoutConstraint.activate([
+            titleView.topAnchor.constraint(equalTo: view.topAnchor),
+            titleView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            titleView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            titleView.heightAnchor.constraint(equalToConstant: 80),
+            
+            searchBar.heightAnchor.constraint(equalToConstant: 60),
+            searchBar.bottomAnchor.constraint(equalTo: titleView.bottomAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 10),
+            searchBar.trailingAnchor.constraint(equalTo: titleView.trailingAnchor)
+        ])
+        titleView.backgroundColor = .mainWhite()
+        searchBar.backgroundImage = UIImage()
+    }
+    
+    private func setupCollectionView() {
+        contentView.frame = CGRect(x: 0, y: 0 + 80, width: view.frame.width, height: view.bounds.height)
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: createCompositionalLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.backgroundColor = .mainWhite()
+        view.addSubview(contentView)
+        contentView.addSubview(collectionView)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
+        collectionView.register(UICollectionViewCell.self.self, forCellWithReuseIdentifier: "cellid")
+    }
+    
+    //MARK: COMPOSITIONAL LAYOUT METHODS
+    private func createCompositionalLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+            guard let section = Section(rawValue: sectionIndex) else { fatalError("Unkown section")}
+            switch section {
+            case .users:
+                return self.createUsersSection()
+            }
+        }
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
+        return layout
+    }
+    
+    private func createUsersSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .fractionalWidth(0.6))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitem: item, count: 2)
+        group.interItemSpacing = .fixed(15)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 15
+        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 15, bottom: 0, trailing: 15)
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        return section
+    }
+    
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                       heightDimension: .estimated(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize,
+                                                                        elementKind: UICollectionView.elementKindSectionHeader,
+                                                                        alignment: .topLeading)
+        return sectionHeader
+    }
+    
+    //MARK: DATA SOURCE METHODS
+    private func createDataSource() {
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, user) -> UICollectionViewCell? in
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind") }
+            switch section {
+            case .users:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
+                cell.backgroundColor = .systemBlue
+                return cell
+            }
+        })
+        dataSource?.supplementaryViewProvider = { collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader else { fatalError("Cannot create new section header") }
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind")}
+            guard let items = self.dataSource?.snapshot().itemIdentifiers(inSection: .users) else { fatalError("Snapshot is missing") }
+            sectionHeader.confgure(text: section.description(usersCount: items.count),
+                                   font: .systemFont(ofSize: 36, weight: .light), textColor: .label)
+            return sectionHeader
+        }
+    }
+    
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, UserModel>()
+        snapshot.appendSections([.users])
+        snapshot.appendItems(users, toSection: .users)
+        dataSource?.apply(snapshot, animatingDifferences: true)
+    }
+    
+    enum Section: Int, CaseIterable {
+        case users
+        
+        func description(usersCount: Int) -> String {
+            switch self {
+            case .users:
+                return "\(usersCount) people nearby"
+            }
+        }
     }
 }
 
 //MARK: UISearchBarDelegate
 extension PeopleViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
     }
