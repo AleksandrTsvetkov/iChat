@@ -18,6 +18,8 @@
 		1F2B3BC42475866000632ECD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC32475866000632ECD /* LoginViewController.swift */; };
 		1F2B3BC62475A94F00632ECD /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */; };
 		1F2B3BC82475AB5D00632ECD /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */; };
+		1F5C16F6247B8FD70095422D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F5247B8FD70095422D /* ProfileViewController.swift */; };
+		1F5C16F8247B9ACC0095422D /* UIView + Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */; };
 		1F632FEB2476B77B00C53929 /* UISegmentedControl + Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */; };
 		1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FF02476C16000C53929 /* MainTabBarController.swift */; };
 		1F632FF32476C19C00C53929 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FF22476C19C00C53929 /* PeopleViewController.swift */; };
@@ -54,6 +56,8 @@
 		1F2B3BC32475866000632ECD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
+		1F5C16F5247B8FD70095422D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Corners.swift"; sourceTree = "<group>"; };
 		1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl + Initializer.swift"; sourceTree = "<group>"; };
 		1F632FF02476C16000C53929 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1F632FF22476C19C00C53929 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				1F632FF02476C16000C53929 /* MainTabBarController.swift */,
 				1F632FF22476C19C00C53929 /* PeopleViewController.swift */,
 				1F632FF42476C1F600C53929 /* ConversationsViewController.swift */,
+				1F5C16F5247B8FD70095422D /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				1FFCABE024754C9B008A1E7B /* UIImageView + Initializer.swift */,
 				1F2B3BBD2475647D00632ECD /* UIStackView + Initializer.swift */,
 				1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */,
+				1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -300,12 +306,14 @@
 				1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */,
 				1FAFF8D7247AA34B00F967FA /* SectionHeader.swift in Sources */,
 				1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */,
+				1F5C16F8247B9ACC0095422D /* UIView + Corners.swift in Sources */,
 				1F2B3BC62475A94F00632ECD /* SetupProfileViewController.swift in Sources */,
 				1FA161962476FE44002906C3 /* Bundle-Decodable.swift in Sources */,
 				1F632FF32476C19C00C53929 /* PeopleViewController.swift in Sources */,
 				1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */,
 				1F2B3BBE2475647D00632ECD /* UIStackView + Initializer.swift in Sources */,
 				1F2B3BBC24755EF500632ECD /* LabeledButton.swift in Sources */,
+				1F5C16F6247B8FD70095422D /* ProfileViewController.swift in Sources */,
 				1FFCABE324754C9B008A1E7B /* UIColor + Extension.swift in Sources */,
 				1F2B3BC02475688200632ECD /* SignUpViewController.swift in Sources */,
 				1F632FEB2476B77B00C53929 /* UISegmentedControl + Initializer.swift in Sources */,
