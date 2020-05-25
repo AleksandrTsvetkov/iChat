@@ -20,6 +20,8 @@
 		1F2B3BC82475AB5D00632ECD /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */; };
 		1F5C16F6247B8FD70095422D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F5247B8FD70095422D /* ProfileViewController.swift */; };
 		1F5C16F8247B9ACC0095422D /* UIView + Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */; };
+		1F5C16FA247BBB960095422D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F9247BBB960095422D /* CustomTextField.swift */; };
+		1F5C16FC247BCDAF0095422D /* UIView + Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16FB247BCDAF0095422D /* UIView + Gradient.swift */; };
 		1F632FEB2476B77B00C53929 /* UISegmentedControl + Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */; };
 		1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FF02476C16000C53929 /* MainTabBarController.swift */; };
 		1F632FF32476C19C00C53929 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FF22476C19C00C53929 /* PeopleViewController.swift */; };
@@ -38,7 +40,7 @@
 		1FFCABE224754C9B008A1E7B /* UIButton + Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABDD24754C9B008A1E7B /* UIButton + Initializer.swift */; };
 		1FFCABE324754C9B008A1E7B /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABDE24754C9B008A1E7B /* UIColor + Extension.swift */; };
 		1FFCABE424754C9B008A1E7B /* UIFont + Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABDF24754C9B008A1E7B /* UIFont + Fonts.swift */; };
-		1FFCABE524754C9B008A1E7B /* UIImageView + Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABE024754C9B008A1E7B /* UIImageView + Initializer.swift */; };
+		1FFCABE524754C9B008A1E7B /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABE024754C9B008A1E7B /* UIImageView + Extension.swift */; };
 		1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABE824755A2E008A1E7B /* UIColor + HexValue.swift */; };
 		1FFD08A1247ADF8E00535591 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FFD08A0247ADF8E00535591 /* users.json */; };
 		1FFD08A3247ADFE000535591 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFD08A2247ADFE000535591 /* UserModel.swift */; };
@@ -58,6 +60,8 @@
 		1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		1F5C16F5247B8FD70095422D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Corners.swift"; sourceTree = "<group>"; };
+		1F5C16F9247BBB960095422D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		1F5C16FB247BCDAF0095422D /* UIView + Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Gradient.swift"; sourceTree = "<group>"; };
 		1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl + Initializer.swift"; sourceTree = "<group>"; };
 		1F632FF02476C16000C53929 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1F632FF22476C19C00C53929 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +82,7 @@
 		1FFCABDD24754C9B008A1E7B /* UIButton + Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton + Initializer.swift"; sourceTree = "<group>"; };
 		1FFCABDE24754C9B008A1E7B /* UIColor + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		1FFCABDF24754C9B008A1E7B /* UIFont + Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont + Fonts.swift"; sourceTree = "<group>"; };
-		1FFCABE024754C9B008A1E7B /* UIImageView + Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView + Initializer.swift"; sourceTree = "<group>"; };
+		1FFCABE024754C9B008A1E7B /* UIImageView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		1FFCABE824755A2E008A1E7B /* UIColor + HexValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + HexValue.swift"; sourceTree = "<group>"; };
 		1FFD08A0247ADF8E00535591 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		1FFD08A2247ADFE000535591 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				1F2B3BBB24755EF500632ECD /* LabeledButton.swift */,
 				1F2B3BC124756F2200632ECD /* OneLineTextField.swift */,
 				1F1C719F2478039A003F3780 /* GradientView.swift */,
+				1F5C16F9247BBB960095422D /* CustomTextField.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -201,10 +206,11 @@
 				1FFCABE824755A2E008A1E7B /* UIColor + HexValue.swift */,
 				1FFCABDE24754C9B008A1E7B /* UIColor + Extension.swift */,
 				1FFCABDF24754C9B008A1E7B /* UIFont + Fonts.swift */,
-				1FFCABE024754C9B008A1E7B /* UIImageView + Initializer.swift */,
+				1FFCABE024754C9B008A1E7B /* UIImageView + Extension.swift */,
 				1F2B3BBD2475647D00632ECD /* UIStackView + Initializer.swift */,
 				1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */,
 				1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */,
+				1F5C16FB247BCDAF0095422D /* UIView + Gradient.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				1F1C71A02478039A003F3780 /* GradientView.swift in Sources */,
 				1F1C71A42478087A003F3780 /* SelfConfiguringCell.swift in Sources */,
 				1FFCABE224754C9B008A1E7B /* UIButton + Initializer.swift in Sources */,
+				1F5C16FC247BCDAF0095422D /* UIView + Gradient.swift in Sources */,
 				1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */,
 				1FAFF8D7247AA34B00F967FA /* SectionHeader.swift in Sources */,
 				1FFCABCB24752B74008A1E7B /* AuthViewController.swift in Sources */,
@@ -317,7 +324,8 @@
 				1FFCABE324754C9B008A1E7B /* UIColor + Extension.swift in Sources */,
 				1F2B3BC02475688200632ECD /* SignUpViewController.swift in Sources */,
 				1F632FEB2476B77B00C53929 /* UISegmentedControl + Initializer.swift in Sources */,
-				1FFCABE524754C9B008A1E7B /* UIImageView + Initializer.swift in Sources */,
+				1F5C16FA247BBB960095422D /* CustomTextField.swift in Sources */,
+				1FFCABE524754C9B008A1E7B /* UIImageView + Extension.swift in Sources */,
 				1FFCABE124754C9B008A1E7B /* UILabel + Initializer.swift in Sources */,
 				1FFCABE424754C9B008A1E7B /* UIFont + Fonts.swift in Sources */,
 				1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */,

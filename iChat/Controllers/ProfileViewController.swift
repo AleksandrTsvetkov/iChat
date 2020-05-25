@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
     private let imageView = UIImageView(image: UIImage(named: "human5"), contentMode: .scaleAspectFill)
     private let nameLabel = UILabel(text: "Peter Ben", font: .systemFont(ofSize: 20, weight: .light))
     private let aboutMeLabel = UILabel(text: "You have the opportunity to chat with the best man in the world!", font: .systemFont(ofSize: 16, weight: .light))
-    private let textField = UITextField()
+    private let textField = CustomTextField()
 
     //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
@@ -39,7 +39,9 @@ class ProfileViewController: UIViewController {
         
         aboutMeLabel.numberOfLines = 0
         containerView.backgroundColor = .mainWhite()
-        textField.borderStyle = .roundedRect
+        if let button = textField.rightView as? UIButton {
+            button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        }
         
         
         view.addSubview(imageView)
@@ -72,6 +74,10 @@ class ProfileViewController: UIViewController {
             textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
             textField.heightAnchor.constraint(equalToConstant: 48)
         ])
+    }
+    
+    @objc private func sendMessage() {
+        
     }
 }
 
