@@ -22,6 +22,7 @@
 		1F5C16F8247B9ACC0095422D /* UIView + Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */; };
 		1F5C16FA247BBB960095422D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F9247BBB960095422D /* CustomTextField.swift */; };
 		1F5C16FC247BCDAF0095422D /* UIView + Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16FB247BCDAF0095422D /* UIView + Gradient.swift */; };
+		1F5C16FE247BD60E0095422D /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16FD247BD60E0095422D /* ChatRequestViewController.swift */; };
 		1F632FEB2476B77B00C53929 /* UISegmentedControl + Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */; };
 		1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FF02476C16000C53929 /* MainTabBarController.swift */; };
 		1F632FF32476C19C00C53929 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632FF22476C19C00C53929 /* PeopleViewController.swift */; };
@@ -62,6 +63,7 @@
 		1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Corners.swift"; sourceTree = "<group>"; };
 		1F5C16F9247BBB960095422D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		1F5C16FB247BCDAF0095422D /* UIView + Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Gradient.swift"; sourceTree = "<group>"; };
+		1F5C16FD247BD60E0095422D /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl + Initializer.swift"; sourceTree = "<group>"; };
 		1F632FF02476C16000C53929 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1F632FF22476C19C00C53929 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				1F632FF22476C19C00C53929 /* PeopleViewController.swift */,
 				1F632FF42476C1F600C53929 /* ConversationsViewController.swift */,
 				1F5C16F5247B8FD70095422D /* ProfileViewController.swift */,
+				1F5C16FD247BD60E0095422D /* ChatRequestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */,
 				1F2B3BBE2475647D00632ECD /* UIStackView + Initializer.swift in Sources */,
 				1F2B3BBC24755EF500632ECD /* LabeledButton.swift in Sources */,
+				1F5C16FE247BD60E0095422D /* ChatRequestViewController.swift in Sources */,
 				1F5C16F6247B8FD70095422D /* ProfileViewController.swift in Sources */,
 				1FFCABE324754C9B008A1E7B /* UIColor + Extension.swift in Sources */,
 				1F2B3BC02475688200632ECD /* SignUpViewController.swift in Sources */,
