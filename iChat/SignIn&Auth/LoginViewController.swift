@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         return button
     }()
     private let loginButton = UIButton(title: "Login", titleColor: .white, backgroundColor: .buttonDark())
-    private let signInButton: UIButton = {
+    private let signUpButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign In", for: .normal)
         button.setTitleColor(.buttonRed(), for: .normal)
@@ -41,13 +41,13 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         setupUserInterface()
         
-        signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
     }
     
     //MARK: USER EVENTS HANDLING
-    @objc private func signInButtonTapped() {
+    @objc private func signUpButtonTapped() {
         
     }
     
@@ -74,7 +74,7 @@ class LoginViewController: UIViewController {
         let stackView = UIStackView(arrangedSubviews:
             [labeledLoginWithButton, orLabel, emailStackView, passwordStackView, loginButton],
                                     axis: .vertical, spacing: 22)
-        let bottomStackView = UIStackView(arrangedSubviews: [needAnAccountLabel, signInButton], axis: .horizontal, spacing: 10)
+        let bottomStackView = UIStackView(arrangedSubviews: [needAnAccountLabel, signUpButton], axis: .horizontal, spacing: 10)
         bottomStackView.alignment = .firstBaseline
         loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         

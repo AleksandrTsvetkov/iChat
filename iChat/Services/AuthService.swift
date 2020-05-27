@@ -16,6 +16,10 @@ class AuthService {
     private let auth = Auth.auth()
     
     func login(email: String?, password: String?, completion: @escaping (Result<User, Error>) -> Void) {
+        guard Validators.notEmpty(email: email, password: password) else {
+            completion(.failure(AuthError.notFilledFields))
+            return
+        }
         auth.signIn(withEmail: email!, password: password!) { (result, error) in
             guard let result = result else {
                 completion(.failure(error!))
@@ -26,6 +30,12 @@ class AuthService {
     }
     
     func register(email: String?, password: String?, confirmPassword: String?, completion: @escaping (Result<User, Error>) -> Void) {
+        Validators.validate(email: email, password: password, confirmPassword: confirmPassword) { (error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+        }
         auth.createUser(withEmail: email!, password: password!) { (result, error) in
             guard let result = result else {
                 completion(.failure(error!))
