@@ -15,6 +15,8 @@ class AuthViewController: UIViewController {
     private let googleLabel = UILabel(text: "Get started with")
     private let emailLabel = UILabel(text: "Or sign up with")
     private let loginLabel = UILabel(text: "Already onboard?")
+    private let signUpVC = SignUpViewController()
+    private let loginVC = LoginViewController()
     
     private let googleButton: UIButton = {
         let button = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
@@ -31,6 +33,18 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUserInterface()
+        
+        emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    
+    //MARK: USER EVENTS HANDLING
+    @objc private func emailButtonTapped() {
+        present(signUpVC, animated: true)
+    }
+    
+    @objc private func loginButtonTapped() {
+        present(loginVC, animated: true)
     }
     
     //MARK: SETUP
@@ -49,7 +63,7 @@ class AuthViewController: UIViewController {
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 65),
+            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 56),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])

@@ -40,6 +40,30 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUserInterface()
+        
+        signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
+    }
+    
+    //MARK: USER EVENTS HANDLING
+    @objc private func signInButtonTapped() {
+        
+    }
+    
+    @objc private func loginButtonTapped() {
+        AuthService.shared.login(email: emailTextField.text, password: passwordTextField.text) { (result) in
+            switch result {
+            case .success(let user):
+                self.showAlert(title: "Успешно", message: String(describing: user.email))
+            case .failure(let error):
+                self.showAlert(title: "Ошибка", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    @objc private func googleButtonTapped() {
+        
     }
     
     //MARK: SETUP
@@ -49,7 +73,7 @@ class LoginViewController: UIViewController {
         let passwordStackView = UIStackView(arrangedSubviews: [passwordLabel, passwordTextField], axis: .vertical, spacing: 0)
         let stackView = UIStackView(arrangedSubviews:
             [labeledLoginWithButton, orLabel, emailStackView, passwordStackView, loginButton],
-                                    axis: .vertical, spacing: 26)
+                                    axis: .vertical, spacing: 22)
         let bottomStackView = UIStackView(arrangedSubviews: [needAnAccountLabel, signInButton], axis: .horizontal, spacing: 10)
         bottomStackView.alignment = .firstBaseline
         loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
@@ -63,14 +87,14 @@ class LoginViewController: UIViewController {
         view.addSubview(bottomStackView)
         
         NSLayoutConstraint.activate([
-            welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 26),
+            welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            stackView.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 24),
+            stackView.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             
-            bottomStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 34),
+            bottomStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
             bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
