@@ -20,43 +20,25 @@
 		1F2B3BC82475AB5D00632ECD /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */; };
 		1F2F5BA924800B2E00695742 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F5BA224800B2E00695742 /* gRPCCertificates-Cpp.bundle */; };
 		1F2F5BC624800E9900695742 /* abseil.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA624800B2E00695742 /* abseil.xcframework */; };
-		1F2F5BC724800E9900695742 /* abseil.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA624800B2E00695742 /* abseil.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BC824800E9B00695742 /* BoringSSL-GRPC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA524800B2E00695742 /* BoringSSL-GRPC.xcframework */; };
-		1F2F5BC924800E9B00695742 /* BoringSSL-GRPC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA524800B2E00695742 /* BoringSSL-GRPC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BCA24800E9C00695742 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB024800E0200695742 /* FIRAnalyticsConnector.framework */; };
-		1F2F5BCB24800E9C00695742 /* FIRAnalyticsConnector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB024800E0200695742 /* FIRAnalyticsConnector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F2F5BCC24800E9D00695742 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB724800E0400695742 /* FirebaseAnalytics.framework */; };
-		1F2F5BCD24800E9D00695742 /* FirebaseAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB724800E0400695742 /* FirebaseAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F2F5BCE24800E9F00695742 /* FirebaseAuth.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9A24800A4E00695742 /* FirebaseAuth.xcframework */; };
-		1F2F5BCF24800E9F00695742 /* FirebaseAuth.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9A24800A4E00695742 /* FirebaseAuth.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BD024800EA000695742 /* FirebaseCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BBA24800E0500695742 /* FirebaseCore.xcframework */; };
-		1F2F5BD124800EA000695742 /* FirebaseCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BBA24800E0500695742 /* FirebaseCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BD224800EA100695742 /* FirebaseCoreDiagnostics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB824800E0400695742 /* FirebaseCoreDiagnostics.xcframework */; };
-		1F2F5BD324800EA100695742 /* FirebaseCoreDiagnostics.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB824800E0400695742 /* FirebaseCoreDiagnostics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BD424800EA200695742 /* FirebaseFirestore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9F24800B2E00695742 /* FirebaseFirestore.xcframework */; };
-		1F2F5BD524800EA200695742 /* FirebaseFirestore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9F24800B2E00695742 /* FirebaseFirestore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BD624800EA400695742 /* FirebaseInstallations.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB524800E0400695742 /* FirebaseInstallations.xcframework */; };
-		1F2F5BD724800EA400695742 /* FirebaseInstallations.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB524800E0400695742 /* FirebaseInstallations.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BD824800EAA00695742 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB124800E0300695742 /* GoogleAppMeasurement.framework */; };
-		1F2F5BD924800EAA00695742 /* GoogleAppMeasurement.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB124800E0300695742 /* GoogleAppMeasurement.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F2F5BDA24800EAB00695742 /* GoogleDataTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB924800E0500695742 /* GoogleDataTransport.xcframework */; };
-		1F2F5BDB24800EAB00695742 /* GoogleDataTransport.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB924800E0500695742 /* GoogleDataTransport.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BDC24800EAC00695742 /* GoogleDataTransportCCTSupport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB224800E0300695742 /* GoogleDataTransportCCTSupport.xcframework */; };
-		1F2F5BDD24800EAC00695742 /* GoogleDataTransportCCTSupport.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB224800E0300695742 /* GoogleDataTransportCCTSupport.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BDE24800EAD00695742 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB624800E0400695742 /* GoogleUtilities.xcframework */; };
-		1F2F5BDF24800EAD00695742 /* GoogleUtilities.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB624800E0400695742 /* GoogleUtilities.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BE024800EAE00695742 /* gRPC-C++.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA424800B2E00695742 /* gRPC-C++.xcframework */; };
-		1F2F5BE124800EAF00695742 /* gRPC-C++.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA424800B2E00695742 /* gRPC-C++.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BE224800EB000695742 /* gRPC-Core.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA024800B2E00695742 /* gRPC-Core.xcframework */; };
-		1F2F5BE324800EB000695742 /* gRPC-Core.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA024800B2E00695742 /* gRPC-Core.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BE424800EB100695742 /* GTMSessionFetcher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9B24800A4F00695742 /* GTMSessionFetcher.xcframework */; };
-		1F2F5BE524800EB100695742 /* GTMSessionFetcher.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9B24800A4F00695742 /* GTMSessionFetcher.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BE624800EB200695742 /* leveldb-library.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA324800B2E00695742 /* leveldb-library.xcframework */; };
-		1F2F5BE724800EB200695742 /* leveldb-library.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA324800B2E00695742 /* leveldb-library.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BE824800EB300695742 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB324800E0300695742 /* nanopb.xcframework */; };
-		1F2F5BE924800EB300695742 /* nanopb.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB324800E0300695742 /* nanopb.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F2F5BEA24800EB400695742 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */; };
-		1F2F5BEB24800EB400695742 /* PromisesObjC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BEF2480313800695742 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F5BEE2480313800695742 /* UserError.swift */; };
 		1F5C16F6247B8FD70095422D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F5247B8FD70095422D /* ProfileViewController.swift */; };
 		1F5C16F8247B9ACC0095422D /* UIView + Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */; };
 		1F5C16FA247BBB960095422D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F9247BBB960095422D /* CustomTextField.swift */; };
@@ -93,38 +75,6 @@
 		1FFD08A3247ADFE000535591 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFD08A2247ADFE000535591 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1FEEA6AF247FF646007C40E1 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1F2F5BD524800EA200695742 /* FirebaseFirestore.xcframework in Embed Frameworks */,
-				1F2F5BE524800EB100695742 /* GTMSessionFetcher.xcframework in Embed Frameworks */,
-				1F2F5BCD24800E9D00695742 /* FirebaseAnalytics.framework in Embed Frameworks */,
-				1F2F5BDB24800EAB00695742 /* GoogleDataTransport.xcframework in Embed Frameworks */,
-				1F2F5BE724800EB200695742 /* leveldb-library.xcframework in Embed Frameworks */,
-				1F2F5BDF24800EAD00695742 /* GoogleUtilities.xcframework in Embed Frameworks */,
-				1F2F5BDD24800EAC00695742 /* GoogleDataTransportCCTSupport.xcframework in Embed Frameworks */,
-				1F2F5BD924800EAA00695742 /* GoogleAppMeasurement.framework in Embed Frameworks */,
-				1F2F5BD124800EA000695742 /* FirebaseCore.xcframework in Embed Frameworks */,
-				1F2F5BCF24800E9F00695742 /* FirebaseAuth.xcframework in Embed Frameworks */,
-				1F2F5BC724800E9900695742 /* abseil.xcframework in Embed Frameworks */,
-				1F2F5BCB24800E9C00695742 /* FIRAnalyticsConnector.framework in Embed Frameworks */,
-				1F2F5BD324800EA100695742 /* FirebaseCoreDiagnostics.xcframework in Embed Frameworks */,
-				1F2F5BE124800EAF00695742 /* gRPC-C++.xcframework in Embed Frameworks */,
-				1F2F5BC924800E9B00695742 /* BoringSSL-GRPC.xcframework in Embed Frameworks */,
-				1F2F5BEB24800EB400695742 /* PromisesObjC.xcframework in Embed Frameworks */,
-				1F2F5BE924800EB300695742 /* nanopb.xcframework in Embed Frameworks */,
-				1F2F5BD724800EA400695742 /* FirebaseInstallations.xcframework in Embed Frameworks */,
-				1F2F5BE324800EB000695742 /* gRPC-Core.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1F1C719D2477F452003F3780 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		1F1C719F2478039A003F3780 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -160,6 +110,7 @@
 		1F2F5BB924800E0500695742 /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransport.xcframework; sourceTree = "<group>"; };
 		1F2F5BBA24800E0500695742 /* FirebaseCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCore.xcframework; sourceTree = "<group>"; };
 		1F2F5BEC24800F3F00695742 /* iChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iChat-Bridging-Header.h"; sourceTree = "<group>"; };
+		1F2F5BEE2480313800695742 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		1F5C16F5247B8FD70095422D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Corners.swift"; sourceTree = "<group>"; };
 		1F5C16F9247BBB960095422D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -244,6 +195,7 @@
 				1FE027F724780A6F00F19FA0 /* ChatPreview.swift */,
 				1FFD08A2247ADFE000535591 /* UserModel.swift */,
 				1F8B27E5247EF4400037A511 /* AuthError.swift */,
+				1F2F5BEE2480313800695742 /* UserError.swift */,
 				1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */,
 			);
 			path = Models;
@@ -434,7 +386,6 @@
 				1FFCABBF24752B74008A1E7B /* Sources */,
 				1FFCABC024752B74008A1E7B /* Frameworks */,
 				1FFCABC124752B74008A1E7B /* Resources */,
-				1FEEA6AF247FF646007C40E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -504,6 +455,7 @@
 				1F2B3BC42475866000632ECD /* LoginViewController.swift in Sources */,
 				1F1C71A02478039A003F3780 /* GradientView.swift in Sources */,
 				1F1C71A42478087A003F3780 /* SelfConfiguringCell.swift in Sources */,
+				1F2F5BEF2480313800695742 /* UserError.swift in Sources */,
 				1FFCABE224754C9B008A1E7B /* UIButton + Initializer.swift in Sources */,
 				1F5C16FC247BCDAF0095422D /* UIView + Gradient.swift in Sources */,
 				1F632FF12476C16000C53929 /* MainTabBarController.swift in Sources */,

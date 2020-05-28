@@ -46,7 +46,7 @@ class SignUpViewController: UIViewController {
             switch result {
             case .success(let user):
                 self.showAlert(title: "Успешно", message: String(describing: user.email)) {
-                    let setupVC = SetupProfileViewController()
+                    let setupVC = SetupProfileViewController(currentUser: user)
                     setupVC.modalPresentationStyle = .fullScreen
                     self.present(setupVC, animated: true)
                 }

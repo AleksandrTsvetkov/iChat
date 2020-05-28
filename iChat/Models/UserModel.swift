@@ -11,7 +11,20 @@ import UIKit
 struct UserModel: Hashable, Decodable {
     var username: String
     var avatarStringURL: String
-    var id: Int
+    var id: String
+    var email: String
+    var description: String
+    var sex: String
+    
+    var dictionary: Dictionary<String, String> {
+        var dict = ["username": username]
+        dict["sex"] = sex
+        dict["email"] = email
+        dict["avatarStringURL"] = avatarStringURL
+        dict["description"] = description
+        dict["uid"] = id
+        return dict
+    }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

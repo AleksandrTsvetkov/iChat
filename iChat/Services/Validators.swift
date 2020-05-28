@@ -31,6 +31,12 @@ class Validators {
         completion(nil)
     }
     
+    static func isFilled(username: String?, description: String?, sex: String?) -> Bool {
+        guard let username = username, let description = description, let sex = sex,
+            username != "", description != "", sex != "" else { return false }
+        return true
+    }
+    
     static func notEmpty(email: String?, password: String?) -> Bool {
         guard let email = email, let password = password, email != "", password != "" else { return false }
         return true

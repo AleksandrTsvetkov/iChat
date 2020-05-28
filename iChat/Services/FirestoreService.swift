@@ -14,8 +14,19 @@ class FirestoreService {
         return db.collection("users")
     }
     
-    func saveProfileWith(id: String, email: String, username: String?, avatarImageString: String?, description: String?) {
-        
+    func saveProfileWith(id: String, email: String, username: String, avatarImageString: String, description: String, sex: String, completion: @escaping (Result<UserModel, Error>) -> Void) {
+        guard Validators.isFilled(username: username, description: description, sex: sex) else {
+            completion(.failure(UserError.notFilled))
+            return
+        }
+        let userModel = UserModel(username: username, avatarStringURL: avatarImageString, id: id, email: email, description: description, sex: sex)
+        self.usersRef.document(userModel.id).setData(userModel.dictionary) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(userModel))
+            }
+        }
     }
     
     fileprivate init() {}
