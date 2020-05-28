@@ -11,6 +11,8 @@ import UIKit
 enum UserError {
     case notFilled
     case photoNotExist
+    case cannotGetUserInfo
+    case cannotCastToUserModel
 }
 
 extension UserError: LocalizedError {
@@ -20,6 +22,10 @@ extension UserError: LocalizedError {
             return NSLocalizedString("Заполните все поля", comment: "")
         case .photoNotExist:
             return NSLocalizedString("Отсутствует фотография", comment: "")
+        case .cannotGetUserInfo:
+            return NSLocalizedString("Невозможно получить информацию о пользователе", comment: "")
+        case .cannotCastToUserModel:
+            return NSLocalizedString("Невозможно сконвертировать данные пользователя", comment: "")
         }
     }
 }

@@ -29,6 +29,21 @@ class FirestoreService {
         }
     }
     
+    func getUserData(user: User, completion: @escaping (Result<UserModel, Error>) -> Void) {
+        let docRef = usersRef.document(user.uid)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                guard let userModel = UserModel(document: document) else {
+                    completion(.failure(UserError.cannotCastToUserModel))
+                    return
+                }
+                completion(.success(userModel))
+            } else {
+                completion(.failure(UserError.cannotGetUserInfo))
+            }
+        }
+    }
+    
     fileprivate init() {}
     
 }

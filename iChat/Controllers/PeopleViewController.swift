@@ -12,7 +12,8 @@ import SwiftUI
 class PeopleViewController: UIViewController {
     
     //MARK: PROPERTIES
-    private let users = Bundle.main.decode(Array<UserModel>.self, from: "users.json")
+    //private let users = Bundle.main.decode(Array<UserModel>.self, from: "users.json")
+    private let users: Array<UserModel> = []
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, UserModel>?
     private let titleView = UIView()
@@ -27,6 +28,12 @@ class PeopleViewController: UIViewController {
         setupCollectionView()
         createDataSource()
         reloadData(with: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(signOut))
+    }
+    
+    //MARK: USER EVENTS HANDLING
+    @objc private func signOut() {
+        
     }
     
     //MARK: SETUP
@@ -153,6 +160,16 @@ extension PeopleViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         reloadData(with: searchText)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
     }
 }
 
