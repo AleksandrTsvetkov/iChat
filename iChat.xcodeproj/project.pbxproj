@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,45 @@
 		1F2B3BC42475866000632ECD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC32475866000632ECD /* LoginViewController.swift */; };
 		1F2B3BC62475A94F00632ECD /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */; };
 		1F2B3BC82475AB5D00632ECD /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */; };
+		1F2F5BA924800B2E00695742 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F5BA224800B2E00695742 /* gRPCCertificates-Cpp.bundle */; };
+		1F2F5BC624800E9900695742 /* abseil.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA624800B2E00695742 /* abseil.xcframework */; };
+		1F2F5BC724800E9900695742 /* abseil.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA624800B2E00695742 /* abseil.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BC824800E9B00695742 /* BoringSSL-GRPC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA524800B2E00695742 /* BoringSSL-GRPC.xcframework */; };
+		1F2F5BC924800E9B00695742 /* BoringSSL-GRPC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA524800B2E00695742 /* BoringSSL-GRPC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BCA24800E9C00695742 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB024800E0200695742 /* FIRAnalyticsConnector.framework */; };
+		1F2F5BCB24800E9C00695742 /* FIRAnalyticsConnector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB024800E0200695742 /* FIRAnalyticsConnector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1F2F5BCC24800E9D00695742 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB724800E0400695742 /* FirebaseAnalytics.framework */; };
+		1F2F5BCD24800E9D00695742 /* FirebaseAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB724800E0400695742 /* FirebaseAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1F2F5BCE24800E9F00695742 /* FirebaseAuth.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9A24800A4E00695742 /* FirebaseAuth.xcframework */; };
+		1F2F5BCF24800E9F00695742 /* FirebaseAuth.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9A24800A4E00695742 /* FirebaseAuth.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BD024800EA000695742 /* FirebaseCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BBA24800E0500695742 /* FirebaseCore.xcframework */; };
+		1F2F5BD124800EA000695742 /* FirebaseCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BBA24800E0500695742 /* FirebaseCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BD224800EA100695742 /* FirebaseCoreDiagnostics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB824800E0400695742 /* FirebaseCoreDiagnostics.xcframework */; };
+		1F2F5BD324800EA100695742 /* FirebaseCoreDiagnostics.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB824800E0400695742 /* FirebaseCoreDiagnostics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BD424800EA200695742 /* FirebaseFirestore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9F24800B2E00695742 /* FirebaseFirestore.xcframework */; };
+		1F2F5BD524800EA200695742 /* FirebaseFirestore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9F24800B2E00695742 /* FirebaseFirestore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BD624800EA400695742 /* FirebaseInstallations.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB524800E0400695742 /* FirebaseInstallations.xcframework */; };
+		1F2F5BD724800EA400695742 /* FirebaseInstallations.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB524800E0400695742 /* FirebaseInstallations.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BD824800EAA00695742 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB124800E0300695742 /* GoogleAppMeasurement.framework */; };
+		1F2F5BD924800EAA00695742 /* GoogleAppMeasurement.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB124800E0300695742 /* GoogleAppMeasurement.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1F2F5BDA24800EAB00695742 /* GoogleDataTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB924800E0500695742 /* GoogleDataTransport.xcframework */; };
+		1F2F5BDB24800EAB00695742 /* GoogleDataTransport.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB924800E0500695742 /* GoogleDataTransport.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BDC24800EAC00695742 /* GoogleDataTransportCCTSupport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB224800E0300695742 /* GoogleDataTransportCCTSupport.xcframework */; };
+		1F2F5BDD24800EAC00695742 /* GoogleDataTransportCCTSupport.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB224800E0300695742 /* GoogleDataTransportCCTSupport.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BDE24800EAD00695742 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB624800E0400695742 /* GoogleUtilities.xcframework */; };
+		1F2F5BDF24800EAD00695742 /* GoogleUtilities.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB624800E0400695742 /* GoogleUtilities.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BE024800EAE00695742 /* gRPC-C++.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA424800B2E00695742 /* gRPC-C++.xcframework */; };
+		1F2F5BE124800EAF00695742 /* gRPC-C++.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA424800B2E00695742 /* gRPC-C++.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BE224800EB000695742 /* gRPC-Core.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA024800B2E00695742 /* gRPC-Core.xcframework */; };
+		1F2F5BE324800EB000695742 /* gRPC-Core.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA024800B2E00695742 /* gRPC-Core.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BE424800EB100695742 /* GTMSessionFetcher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9B24800A4F00695742 /* GTMSessionFetcher.xcframework */; };
+		1F2F5BE524800EB100695742 /* GTMSessionFetcher.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9B24800A4F00695742 /* GTMSessionFetcher.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BE624800EB200695742 /* leveldb-library.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA324800B2E00695742 /* leveldb-library.xcframework */; };
+		1F2F5BE724800EB200695742 /* leveldb-library.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA324800B2E00695742 /* leveldb-library.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BE824800EB300695742 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB324800E0300695742 /* nanopb.xcframework */; };
+		1F2F5BE924800EB300695742 /* nanopb.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB324800E0300695742 /* nanopb.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F2F5BEA24800EB400695742 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */; };
+		1F2F5BEB24800EB400695742 /* PromisesObjC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F5C16F6247B8FD70095422D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F5247B8FD70095422D /* ProfileViewController.swift */; };
 		1F5C16F8247B9ACC0095422D /* UIView + Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */; };
 		1F5C16FA247BBB960095422D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F9247BBB960095422D /* CustomTextField.swift */; };
@@ -37,6 +76,7 @@
 		1FAFF8D7247AA34B00F967FA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */; };
 		1FC6874B247FC91700682AD9 /* UIView + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874A247FC91700682AD9 /* UIView + Alert.swift */; };
 		1FC6874D247FCA9000682AD9 /* AuthNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */; };
+		1FC6874F247FE9B700682AD9 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874E247FE9B700682AD9 /* FirestoreService.swift */; };
 		1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE027F724780A6F00F19FA0 /* ChatPreview.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
@@ -51,8 +91,39 @@
 		1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABE824755A2E008A1E7B /* UIColor + HexValue.swift */; };
 		1FFD08A1247ADF8E00535591 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FFD08A0247ADF8E00535591 /* users.json */; };
 		1FFD08A3247ADFE000535591 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFD08A2247ADFE000535591 /* UserModel.swift */; };
-		34B89E551293953AFACA6222 /* libPods-iChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3131C073F244DFD4C25DC81B /* libPods-iChat.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1FEEA6AF247FF646007C40E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1F2F5BD524800EA200695742 /* FirebaseFirestore.xcframework in Embed Frameworks */,
+				1F2F5BE524800EB100695742 /* GTMSessionFetcher.xcframework in Embed Frameworks */,
+				1F2F5BCD24800E9D00695742 /* FirebaseAnalytics.framework in Embed Frameworks */,
+				1F2F5BDB24800EAB00695742 /* GoogleDataTransport.xcframework in Embed Frameworks */,
+				1F2F5BE724800EB200695742 /* leveldb-library.xcframework in Embed Frameworks */,
+				1F2F5BDF24800EAD00695742 /* GoogleUtilities.xcframework in Embed Frameworks */,
+				1F2F5BDD24800EAC00695742 /* GoogleDataTransportCCTSupport.xcframework in Embed Frameworks */,
+				1F2F5BD924800EAA00695742 /* GoogleAppMeasurement.framework in Embed Frameworks */,
+				1F2F5BD124800EA000695742 /* FirebaseCore.xcframework in Embed Frameworks */,
+				1F2F5BCF24800E9F00695742 /* FirebaseAuth.xcframework in Embed Frameworks */,
+				1F2F5BC724800E9900695742 /* abseil.xcframework in Embed Frameworks */,
+				1F2F5BCB24800E9C00695742 /* FIRAnalyticsConnector.framework in Embed Frameworks */,
+				1F2F5BD324800EA100695742 /* FirebaseCoreDiagnostics.xcframework in Embed Frameworks */,
+				1F2F5BE124800EAF00695742 /* gRPC-C++.xcframework in Embed Frameworks */,
+				1F2F5BC924800E9B00695742 /* BoringSSL-GRPC.xcframework in Embed Frameworks */,
+				1F2F5BEB24800EB400695742 /* PromisesObjC.xcframework in Embed Frameworks */,
+				1F2F5BE924800EB300695742 /* nanopb.xcframework in Embed Frameworks */,
+				1F2F5BD724800EA400695742 /* FirebaseInstallations.xcframework in Embed Frameworks */,
+				1F2F5BE324800EB000695742 /* gRPC-Core.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1F1C719D2477F452003F3780 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
@@ -66,6 +137,29 @@
 		1F2B3BC32475866000632ECD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
+		1F2F5B9A24800A4E00695742 /* FirebaseAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseAuth.xcframework; sourceTree = "<group>"; };
+		1F2F5B9B24800A4F00695742 /* GTMSessionFetcher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GTMSessionFetcher.xcframework; sourceTree = "<group>"; };
+		1F2F5B9F24800B2E00695742 /* FirebaseFirestore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseFirestore.xcframework; sourceTree = "<group>"; };
+		1F2F5BA024800B2E00695742 /* gRPC-Core.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "gRPC-Core.xcframework"; sourceTree = "<group>"; };
+		1F2F5BA224800B2E00695742 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
+		1F2F5BA324800B2E00695742 /* leveldb-library.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "leveldb-library.xcframework"; sourceTree = "<group>"; };
+		1F2F5BA424800B2E00695742 /* gRPC-C++.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "gRPC-C++.xcframework"; sourceTree = "<group>"; };
+		1F2F5BA524800B2E00695742 /* BoringSSL-GRPC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "BoringSSL-GRPC.xcframework"; sourceTree = "<group>"; };
+		1F2F5BA624800B2E00695742 /* abseil.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = abseil.xcframework; sourceTree = "<group>"; };
+		1F2F5BAE24800B7F00695742 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		1F2F5BAF24800B8900695742 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		1F2F5BB024800E0200695742 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		1F2F5BB124800E0300695742 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		1F2F5BB224800E0300695742 /* GoogleDataTransportCCTSupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransportCCTSupport.xcframework; sourceTree = "<group>"; };
+		1F2F5BB324800E0300695742 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
+		1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
+		1F2F5BB524800E0400695742 /* FirebaseInstallations.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseInstallations.xcframework; sourceTree = "<group>"; };
+		1F2F5BB624800E0400695742 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
+		1F2F5BB724800E0400695742 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		1F2F5BB824800E0400695742 /* FirebaseCoreDiagnostics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCoreDiagnostics.xcframework; sourceTree = "<group>"; };
+		1F2F5BB924800E0500695742 /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransport.xcframework; sourceTree = "<group>"; };
+		1F2F5BBA24800E0500695742 /* FirebaseCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCore.xcframework; sourceTree = "<group>"; };
+		1F2F5BEC24800F3F00695742 /* iChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		1F5C16F5247B8FD70095422D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Corners.swift"; sourceTree = "<group>"; };
 		1F5C16F9247BBB960095422D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -85,6 +179,7 @@
 		1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		1FC6874A247FC91700682AD9 /* UIView + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Alert.swift"; sourceTree = "<group>"; };
 		1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationDelegate.swift; sourceTree = "<group>"; };
+		1FC6874E247FE9B700682AD9 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		1FE027F724780A6F00F19FA0 /* ChatPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPreview.swift; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,9 +196,6 @@
 		1FFCABE824755A2E008A1E7B /* UIColor + HexValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + HexValue.swift"; sourceTree = "<group>"; };
 		1FFD08A0247ADF8E00535591 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		1FFD08A2247ADFE000535591 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		3131C073F244DFD4C25DC81B /* libPods-iChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50C880693D413F84B57D4855 /* Pods-iChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.debug.xcconfig"; path = "Target Support Files/Pods-iChat/Pods-iChat.debug.xcconfig"; sourceTree = "<group>"; };
-		D1EEF2704DDE38FA3678358D /* Pods-iChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.release.xcconfig"; path = "Target Support Files/Pods-iChat/Pods-iChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +203,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34B89E551293953AFACA6222 /* libPods-iChat.a in Frameworks */,
+				1F2F5BCE24800E9F00695742 /* FirebaseAuth.xcframework in Frameworks */,
+				1F2F5BE824800EB300695742 /* nanopb.xcframework in Frameworks */,
+				1F2F5BC624800E9900695742 /* abseil.xcframework in Frameworks */,
+				1F2F5BDC24800EAC00695742 /* GoogleDataTransportCCTSupport.xcframework in Frameworks */,
+				1F2F5BE224800EB000695742 /* gRPC-Core.xcframework in Frameworks */,
+				1F2F5BD624800EA400695742 /* FirebaseInstallations.xcframework in Frameworks */,
+				1F2F5BD024800EA000695742 /* FirebaseCore.xcframework in Frameworks */,
+				1F2F5BDE24800EAD00695742 /* GoogleUtilities.xcframework in Frameworks */,
+				1F2F5BE624800EB200695742 /* leveldb-library.xcframework in Frameworks */,
+				1F2F5BD424800EA200695742 /* FirebaseFirestore.xcframework in Frameworks */,
+				1F2F5BD224800EA100695742 /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
+				1F2F5BCC24800E9D00695742 /* FirebaseAnalytics.framework in Frameworks */,
+				1F2F5BE024800EAE00695742 /* gRPC-C++.xcframework in Frameworks */,
+				1F2F5BD824800EAA00695742 /* GoogleAppMeasurement.framework in Frameworks */,
+				1F2F5BC824800E9B00695742 /* BoringSSL-GRPC.xcframework in Frameworks */,
+				1F2F5BEA24800EB400695742 /* PromisesObjC.xcframework in Frameworks */,
+				1F2F5BE424800EB100695742 /* GTMSessionFetcher.xcframework in Frameworks */,
+				1F2F5BCA24800E9C00695742 /* FIRAnalyticsConnector.framework in Frameworks */,
+				1F2F5BDA24800EAB00695742 /* GoogleDataTransport.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +249,51 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1F2F5B9924800A3D00695742 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F5BAF24800B8900695742 /* module.modulemap */,
+				1F2F5BAE24800B7F00695742 /* Firebase.h */,
+				1F2F5BB024800E0200695742 /* FIRAnalyticsConnector.framework */,
+				1F2F5BB724800E0400695742 /* FirebaseAnalytics.framework */,
+				1F2F5BBA24800E0500695742 /* FirebaseCore.xcframework */,
+				1F2F5BB824800E0400695742 /* FirebaseCoreDiagnostics.xcframework */,
+				1F2F5BB524800E0400695742 /* FirebaseInstallations.xcframework */,
+				1F2F5BB124800E0300695742 /* GoogleAppMeasurement.framework */,
+				1F2F5BB924800E0500695742 /* GoogleDataTransport.xcframework */,
+				1F2F5BB224800E0300695742 /* GoogleDataTransportCCTSupport.xcframework */,
+				1F2F5BB624800E0400695742 /* GoogleUtilities.xcframework */,
+				1F2F5BB324800E0300695742 /* nanopb.xcframework */,
+				1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */,
+				1F2F5B9A24800A4E00695742 /* FirebaseAuth.xcframework */,
+				1F2F5B9B24800A4F00695742 /* GTMSessionFetcher.xcframework */,
+				1F2F5B9E24800B2E00695742 /* FirebaseFirestore */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F2F5B9E24800B2E00695742 /* FirebaseFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F5B9F24800B2E00695742 /* FirebaseFirestore.xcframework */,
+				1F2F5BA024800B2E00695742 /* gRPC-Core.xcframework */,
+				1F2F5BA124800B2E00695742 /* Resources */,
+				1F2F5BA324800B2E00695742 /* leveldb-library.xcframework */,
+				1F2F5BA424800B2E00695742 /* gRPC-C++.xcframework */,
+				1F2F5BA524800B2E00695742 /* BoringSSL-GRPC.xcframework */,
+				1F2F5BA624800B2E00695742 /* abseil.xcframework */,
+			);
+			path = FirebaseFirestore;
+			sourceTree = "<group>";
+		};
+		1F2F5BA124800B2E00695742 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F5BA224800B2E00695742 /* gRPCCertificates-Cpp.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1F632FEC2476C06100C53929 /* SignIn&Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +317,7 @@
 				1FA161912476FDCE002906C3 /* activeChats.json */,
 				1FA161922476FDCE002906C3 /* waitingChats.json */,
 				1FFD08A0247ADF8E00535591 /* users.json */,
+				1F2F5BEC24800F3F00695742 /* iChat-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -196,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				1F8B27E1247EC28B0037A511 /* AuthService.swift */,
+				1FC6874E247FE9B700682AD9 /* FirestoreService.swift */,
 				1F8B27E3247EEF140037A511 /* Validators.swift */,
 			);
 			path = Services;
@@ -206,8 +363,7 @@
 			children = (
 				1FFCABC524752B74008A1E7B /* iChat */,
 				1FFCABC424752B74008A1E7B /* Products */,
-				538AC0139002207C4553410C /* Pods */,
-				C9C71C844C556566463A4C61 /* Frameworks */,
+				1F2F5B9924800A3D00695742 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,23 +424,6 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		538AC0139002207C4553410C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				50C880693D413F84B57D4855 /* Pods-iChat.debug.xcconfig */,
-				D1EEF2704DDE38FA3678358D /* Pods-iChat.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		C9C71C844C556566463A4C61 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3131C073F244DFD4C25DC81B /* libPods-iChat.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,10 +431,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FFCABD724752B76008A1E7B /* Build configuration list for PBXNativeTarget "iChat" */;
 			buildPhases = (
-				DE4E53F3DFF0BDA50F20A7E8 /* [CP] Check Pods Manifest.lock */,
 				1FFCABBF24752B74008A1E7B /* Sources */,
 				1FFCABC024752B74008A1E7B /* Frameworks */,
 				1FFCABC124752B74008A1E7B /* Resources */,
+				1FEEA6AF247FF646007C40E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +457,7 @@
 				TargetAttributes = {
 					1FFCABC224752B74008A1E7B = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -347,6 +487,7 @@
 				1FFD08A1247ADF8E00535591 /* users.json in Resources */,
 				1FFCABD324752B76008A1E7B /* LaunchScreen.storyboard in Resources */,
 				1FA161932476FDCE002906C3 /* activeChats.json in Resources */,
+				1F2F5BA924800B2E00695742 /* gRPCCertificates-Cpp.bundle in Resources */,
 				1FFCABD024752B76008A1E7B /* Assets.xcassets in Resources */,
 				1FA161942476FDCE002906C3 /* waitingChats.json in Resources */,
 				1F6B639B247BFBCC002A4DB9 /* GoogleService-Info.plist in Resources */,
@@ -354,31 +495,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DE4E53F3DFF0BDA50F20A7E8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iChat-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FFCABBF24752B74008A1E7B /* Sources */ = {
@@ -401,6 +517,7 @@
 				1FA161962476FE44002906C3 /* Bundle-Decodable.swift in Sources */,
 				1F632FF32476C19C00C53929 /* PeopleViewController.swift in Sources */,
 				1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */,
+				1FC6874F247FE9B700682AD9 /* FirestoreService.swift in Sources */,
 				1F2B3BBE2475647D00632ECD /* UIStackView + Initializer.swift in Sources */,
 				1F2B3BBC24755EF500632ECD /* LabeledButton.swift in Sources */,
 				1F5C16FE247BD60E0095422D /* ChatRequestViewController.swift in Sources */,
@@ -556,19 +673,26 @@
 		};
 		1FFCABD824752B76008A1E7B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50C880693D413F84B57D4855 /* Pods-iChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4RLTSR7RF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iChat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = Tsvetkov.Alexander.iChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iChat/Supporting Files/iChat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -576,19 +700,25 @@
 		};
 		1FFCABD924752B76008A1E7B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1EEF2704DDE38FA3678358D /* Pods-iChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4RLTSR7RF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iChat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = Tsvetkov.Alexander.iChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iChat/Supporting Files/iChat-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
