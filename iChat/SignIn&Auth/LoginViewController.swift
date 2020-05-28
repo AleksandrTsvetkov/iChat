@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
         button.contentHorizontalAlignment = .leading
         return button
     }()
+    weak var delegate: AuthNavigationDelegate?
     
     //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
@@ -48,14 +49,20 @@ class LoginViewController: UIViewController {
     
     //MARK: USER EVENTS HANDLING
     @objc private func signUpButtonTapped() {
-        
+        dismiss(animated: true) {
+            self.delegate?.toSignUpVC()
+        }
     }
     
     @objc private func loginButtonTapped() {
         AuthService.shared.login(email: emailTextField.text, password: passwordTextField.text) { (result) in
             switch result {
             case .success(let user):
-                self.showAlert(title: "Успешно", message: String(describing: user.email))
+                self.showAlert(title: "Успешно", message: String(describing: user.email)) {
+                    let mainTabBarController = MainTabBarController()
+                    mainTabBarController.modalPresentationStyle = .fullScreen
+                    self.present(mainTabBarController, animated: true)
+                }
             case .failure(let error):
                 self.showAlert(title: "Ошибка", message: error.localizedDescription)
             }

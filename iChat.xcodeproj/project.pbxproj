@@ -35,6 +35,8 @@
 		1FA161942476FDCE002906C3 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FA161922476FDCE002906C3 /* waitingChats.json */; };
 		1FA161962476FE44002906C3 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA161952476FE44002906C3 /* Bundle-Decodable.swift */; };
 		1FAFF8D7247AA34B00F967FA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */; };
+		1FC6874B247FC91700682AD9 /* UIView + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874A247FC91700682AD9 /* UIView + Alert.swift */; };
+		1FC6874D247FCA9000682AD9 /* AuthNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */; };
 		1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE027F724780A6F00F19FA0 /* ChatPreview.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
@@ -81,6 +83,8 @@
 		1FA161922476FDCE002906C3 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		1FA161952476FE44002906C3 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		1FC6874A247FC91700682AD9 /* UIView + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Alert.swift"; sourceTree = "<group>"; };
+		1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationDelegate.swift; sourceTree = "<group>"; };
 		1FE027F724780A6F00F19FA0 /* ChatPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPreview.swift; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				1FE027F724780A6F00F19FA0 /* ChatPreview.swift */,
 				1FFD08A2247ADFE000535591 /* UserModel.swift */,
 				1F8B27E5247EF4400037A511 /* AuthError.swift */,
+				1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */,
 				1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */,
 				1F5C16FB247BCDAF0095422D /* UIView + Gradient.swift */,
+				1FC6874A247FC91700682AD9 /* UIView + Alert.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				1F8B27E4247EEF140037A511 /* Validators.swift in Sources */,
 				1F5C16F8247B9ACC0095422D /* UIView + Corners.swift in Sources */,
 				1F2B3BC62475A94F00632ECD /* SetupProfileViewController.swift in Sources */,
+				1FC6874D247FCA9000682AD9 /* AuthNavigationDelegate.swift in Sources */,
 				1FA161962476FE44002906C3 /* Bundle-Decodable.swift in Sources */,
 				1F632FF32476C19C00C53929 /* PeopleViewController.swift in Sources */,
 				1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */,
@@ -404,6 +411,7 @@
 				1F5C16FA247BBB960095422D /* CustomTextField.swift in Sources */,
 				1FFCABE524754C9B008A1E7B /* UIImageView + Extension.swift in Sources */,
 				1FFCABE124754C9B008A1E7B /* UILabel + Initializer.swift in Sources */,
+				1FC6874B247FC91700682AD9 /* UIView + Alert.swift in Sources */,
 				1FFCABE424754C9B008A1E7B /* UIFont + Fonts.swift in Sources */,
 				1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */,
 				1F2B3BC224756F2200632ECD /* OneLineTextField.swift in Sources */,

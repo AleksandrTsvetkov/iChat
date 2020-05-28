@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController {
         button.contentHorizontalAlignment = .leading
         return button
     }()
+    weak var delegate: AuthNavigationDelegate?
     
     //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
@@ -44,7 +45,11 @@ class SignUpViewController: UIViewController {
         AuthService.shared.register(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text) { (result) in
             switch result {
             case .success(let user):
-                self.showAlert(title: "Успешно", message: String(describing: user.email))
+                self.showAlert(title: "Успешно", message: String(describing: user.email)) {
+                    let setupVC = SetupProfileViewController()
+                    setupVC.modalPresentationStyle = .fullScreen
+                    self.present(setupVC, animated: true)
+                }
             case .failure(let error):
                 self.showAlert(title: "Ошибка", message: error.localizedDescription)
             }
@@ -52,7 +57,9 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        
+        self.dismiss(animated: true) {
+            self.delegate?.toLoginVC()
+        }
     }
     
     //MARK: SETUP
@@ -113,15 +120,5 @@ struct SignUpVCProvider: PreviewProvider {
         func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
             
         }
-    }
-}
-
-extension UIViewController {
-    
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(ok)
-        present(alertController, animated: true)
     }
 }
