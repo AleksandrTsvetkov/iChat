@@ -70,6 +70,7 @@
 		1FD57D2B24815A8A0099A527 /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D2A24815A8A0099A527 /* ListenerService.swift */; };
 		1FD57D2D248169100099A527 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D2C248169100099A527 /* UserCell.swift */; };
 		1FD57D2F248169C80099A527 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D2E248169C80099A527 /* WebImageView.swift */; };
+		1FD57D3124817B370099A527 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D3024817B370099A527 /* MessageModel.swift */; };
 		1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE027F724780A6F00F19FA0 /* ChatPreview.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
@@ -153,6 +154,7 @@
 		1FD57D2A24815A8A0099A527 /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
 		1FD57D2C248169100099A527 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		1FD57D2E248169C80099A527 /* WebImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		1FD57D3024817B370099A527 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		1FE027F724780A6F00F19FA0 /* ChatPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPreview.swift; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			children = (
 				1F1C71A32478087A003F3780 /* SelfConfiguringCell.swift */,
 				1FE027F724780A6F00F19FA0 /* ChatPreview.swift */,
+				1FD57D3024817B370099A527 /* MessageModel.swift */,
 				1FFD08A2247ADFE000535591 /* UserModel.swift */,
 				1F8B27E5247EF4400037A511 /* AuthError.swift */,
 				1F2F5BEE2480313800695742 /* UserError.swift */,
@@ -548,6 +551,7 @@
 				1F1C71A224780778003F3780 /* WaitingChatCell.swift in Sources */,
 				1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */,
 				1F1C719E2477F452003F3780 /* ActiveChatCell.swift in Sources */,
+				1FD57D3124817B370099A527 /* MessageModel.swift in Sources */,
 				1F8B27E2247EC28B0037A511 /* AuthService.swift in Sources */,
 				1F632FF52476C1F600C53929 /* ConversationsViewController.swift in Sources */,
 				1FD57D2F248169C80099A527 /* WebImageView.swift in Sources */,

@@ -9,16 +9,24 @@
 import UIKit
 
 struct ChatPreview: Hashable, Decodable {
-    var username: String
-    var userImageString: String
+    var friendUsername: String
+    var friendAvatarImageString: String
     var lastMessage: String
-    var id: Int
+    var friendId: String
+    
+    var dictionary: [String: Any] {
+        var dict = ["friendUsername": friendUsername]
+        dict["friendAvatarImageString"] = friendAvatarImageString
+        dict["friendId"] = friendId
+        dict["lastMessage"] = lastMessage
+        return dict
+    }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(friendId)
     }
     
     static func == (lhs: ChatPreview, rhs: ChatPreview) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.friendId == rhs.friendId
     }
 }

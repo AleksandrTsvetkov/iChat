@@ -13,10 +13,11 @@ class ProfileViewController: UIViewController {
     
     //MARK: PROPERTIES
     private let containerView = UIView()
-    private let imageView = UIImageView(image: UIImage(named: "human5"), contentMode: .scaleAspectFill)
+    private let imageView = WebImageView(image: UIImage(named: "human5"), contentMode: .scaleAspectFill)
     private let nameLabel = UILabel(text: "Peter Ben", font: .systemFont(ofSize: 20, weight: .light))
     private let aboutMeLabel = UILabel(text: "You have the opportunity to chat with the best man in the world!", font: .systemFont(ofSize: 16, weight: .light))
     private let textField = CustomTextField()
+    private let user: UserModel
 
     //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
@@ -24,7 +25,19 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .mainWhite()
         setupUserInterface()
     }
-
+    
+    init(user: UserModel) {
+        self.user = user
+        self.nameLabel.text = user.username
+        self.aboutMeLabel.text = user.description
+        self.imageView.set(imageURL: user.avatarStringURL)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: SETUP
     private func setupUserInterface() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,26 +88,21 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func sendMessage() {
-        
-    }
-}
-
-//MARK: CANVAS PREVIEW
-struct ProfileViewControllerProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let profileViewController = ProfileViewController()
-        
-        func makeUIViewController(context: Context) -> UIViewController {
-            return profileViewController
-        }
-        
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-            
+        guard let message = textField.text, message != "" else { return }
+        self.dismiss(animated: true) {
+            FirestoreService.shared.createWaitingChat(message: message, receiver: self.user) { (result) in
+                let window = UIApplication.shared.connectedScenes
+                .map({ $0 as? UIWindowScene })
+                .compactMap({ $0 })
+                .first?.windows
+                .filter({ $0.isKeyWindow }).first
+                switch result {
+                case .success:
+                    window?.rootViewController?.showAlert(title: "Успешно", message: "Сообщение отправлено")
+                case .failure(let error):
+                    window?.rootViewController?.showAlert(title: "Ошибка", message: error.localizedDescription)
+                }
+            }
         }
     }
 }

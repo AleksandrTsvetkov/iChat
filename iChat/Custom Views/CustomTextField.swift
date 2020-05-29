@@ -65,23 +65,3 @@ class CustomTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-//MARK: CANVAS PREVIEW
-struct TextFieldProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let profileVC = ProfileViewController()
-        
-        func makeUIViewController(context: Context) -> UIViewController {
-            return profileVC
-        }
-        
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-            
-        }
-    }
-}

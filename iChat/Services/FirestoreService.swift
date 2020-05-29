@@ -15,6 +15,7 @@ class FirestoreService {
     private var usersRef: CollectionReference {
         return db.collection("users")
     }
+    private var currentUser: UserModel!
     
     func saveProfileWith(id: String, email: String, username: String, avatarImage: UIImage?, description: String, sex: String, completion: @escaping (Result<UserModel, Error>) -> Void) {
         guard Validators.isFilled(username: username, description: description, sex: sex) else {
@@ -43,6 +44,28 @@ class FirestoreService {
         }
     }
     
+    func createWaitingChat(message: String, receiver: UserModel, completion: @escaping (Result<Void, Error>) -> Void) {
+        let reference = db.collection(["users", receiver.id, "waitingChats"].joined(separator: "/"))
+        let messageReference = reference.document(self.currentUser.id).collection("messages")
+        
+        let message = MessageModel(user: currentUser, content: message)
+        let chat = ChatPreview(friendUsername: currentUser.username, friendAvatarImageString: currentUser.avatarStringURL,
+                               lastMessage: message.content, friendId: currentUser.id)
+        reference.document(currentUser.id).setData(chat.dictionary) { error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            messageReference.addDocument(data: message.dictionary) { error in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                completion(.success(Void()))
+            }
+        }
+    }
+    
     func getUserData(user: User, completion: @escaping (Result<UserModel, Error>) -> Void) {
         let docRef = usersRef.document(user.uid)
         docRef.getDocument { (document, error) in
@@ -51,6 +74,7 @@ class FirestoreService {
                     completion(.failure(UserError.cannotCastToUserModel))
                     return
                 }
+                self.currentUser = userModel
                 completion(.success(userModel))
             } else {
                 completion(.failure(UserError.cannotGetUserInfo))

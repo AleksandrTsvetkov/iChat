@@ -29,7 +29,7 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     //MARK: SETUP CELL
     func configure(with value: ChatPreview) {
-        friendImageView.image = UIImage(named: value.userImageString)
+        friendImageView.image = UIImage(named: value.friendAvatarImageString)
     }
     
     private func setupConstraints() {

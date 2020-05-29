@@ -12,8 +12,8 @@ import SwiftUI
 class ConversationsViewController: UIViewController {
     
     //MARK: PROPERTIES
-    private let activeChatPreviews = Bundle.main.decode(Array<ChatPreview>.self, from: "activeChats.json")
-    private let waitingChatPreviews = Bundle.main.decode(Array<ChatPreview>.self, from: "waitingChats.json")
+    private let activeChatPreviews: Array<ChatPreview> = []
+    private let waitingChatPreviews: Array<ChatPreview> = []
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, ChatPreview>?
     private let titleView = UIView()

@@ -69,8 +69,8 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configure(with value: ChatPreview) {
-        friendImageView.image = UIImage(named: value.userImageString)
-        friendNameLabel.text = value.username
+        friendImageView.image = UIImage(named: value.friendAvatarImageString)
+        friendNameLabel.text = value.friendUsername
         lastMessageLabel.text = value.lastMessage
     }
 }
