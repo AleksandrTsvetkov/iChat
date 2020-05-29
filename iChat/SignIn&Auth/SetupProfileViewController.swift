@@ -41,6 +41,9 @@ class SetupProfileViewController: UIViewController {
         if let username = currentUser.displayName {
             fullNameTextField.text = username
         }
+        if let photoUrl = currentUser.photoURL {
+            addPhotoView.circleImageView.set(imageURL: photoUrl.absoluteString)
+        }
     }
     
     required init?(coder: NSCoder) {

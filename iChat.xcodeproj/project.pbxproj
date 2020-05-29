@@ -67,6 +67,9 @@
 		1FD57D25248133C50099A527 /* FirebaseStorage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD57D24248133C40099A527 /* FirebaseStorage.xcframework */; };
 		1FD57D27248134000099A527 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D26248134000099A527 /* StorageService.swift */; };
 		1FD57D2924813B1B0099A527 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D2824813B1B0099A527 /* UIImage + Extension.swift */; };
+		1FD57D2B24815A8A0099A527 /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D2A24815A8A0099A527 /* ListenerService.swift */; };
+		1FD57D2D248169100099A527 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D2C248169100099A527 /* UserCell.swift */; };
+		1FD57D2F248169C80099A527 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D2E248169C80099A527 /* WebImageView.swift */; };
 		1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE027F724780A6F00F19FA0 /* ChatPreview.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
@@ -147,6 +150,9 @@
 		1FD57D24248133C40099A527 /* FirebaseStorage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseStorage.xcframework; sourceTree = "<group>"; };
 		1FD57D26248134000099A527 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		1FD57D2824813B1B0099A527 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		1FD57D2A24815A8A0099A527 /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
+		1FD57D2C248169100099A527 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		1FD57D2E248169C80099A527 /* WebImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		1FE027F724780A6F00F19FA0 /* ChatPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPreview.swift; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 			children = (
 				1F1C719D2477F452003F3780 /* ActiveChatCell.swift */,
 				1F1C71A124780778003F3780 /* WaitingChatCell.swift */,
+				1FD57D2C248169100099A527 /* UserCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -348,6 +355,7 @@
 				1F8B27E1247EC28B0037A511 /* AuthService.swift */,
 				1FC6874E247FE9B700682AD9 /* FirestoreService.swift */,
 				1FD57D26248134000099A527 /* StorageService.swift */,
+				1FD57D2A24815A8A0099A527 /* ListenerService.swift */,
 				1F8B27E3247EEF140037A511 /* Validators.swift */,
 			);
 			path = Services;
@@ -399,6 +407,7 @@
 				1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */,
 				1F5C16FB247BCDAF0095422D /* UIView + Gradient.swift */,
 				1FC6874A247FC91700682AD9 /* UIView + Alert.swift */,
+				1FD57D2E248169C80099A527 /* WebImageView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -518,7 +527,9 @@
 				1FC6874F247FE9B700682AD9 /* FirestoreService.swift in Sources */,
 				1F2B3BBE2475647D00632ECD /* UIStackView + Initializer.swift in Sources */,
 				1F2B3BBC24755EF500632ECD /* LabeledButton.swift in Sources */,
+				1FD57D2D248169100099A527 /* UserCell.swift in Sources */,
 				1F5C16FE247BD60E0095422D /* ChatRequestViewController.swift in Sources */,
+				1FD57D2B24815A8A0099A527 /* ListenerService.swift in Sources */,
 				1F5C16F6247B8FD70095422D /* ProfileViewController.swift in Sources */,
 				1FFCABE324754C9B008A1E7B /* UIColor + Extension.swift in Sources */,
 				1F2B3BC02475688200632ECD /* SignUpViewController.swift in Sources */,
@@ -539,6 +550,7 @@
 				1F1C719E2477F452003F3780 /* ActiveChatCell.swift in Sources */,
 				1F8B27E2247EC28B0037A511 /* AuthService.swift in Sources */,
 				1F632FF52476C1F600C53929 /* ConversationsViewController.swift in Sources */,
+				1FD57D2F248169C80099A527 /* WebImageView.swift in Sources */,
 				1F2B3BC82475AB5D00632ECD /* AddPhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

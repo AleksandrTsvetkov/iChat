@@ -10,6 +10,7 @@ import UIKit
 
 struct UserModel: Hashable, Decodable {
     
+    //MARK: PROPERTIES
     var username: String
     var avatarStringURL: String
     var id: String
@@ -27,6 +28,7 @@ struct UserModel: Hashable, Decodable {
         return dict
     }
     
+    //MARK: INITIALIZERS
     internal init(username: String, avatarStringURL: String, id: String, email: String, description: String, sex: String) {
         self.username = username
         self.avatarStringURL = avatarStringURL
@@ -54,6 +56,25 @@ struct UserModel: Hashable, Decodable {
         self.id = id
     }
     
+    init?(document: QueryDocumentSnapshot) {
+        let data = document.data()
+        guard
+            let username = data["username"] as? String,
+            let email = data["email"] as? String,
+            let avatarStringURL = data["avatarStringURL"] as? String,
+            let description = data["description"] as? String,
+            let sex = data["sex"] as? String,
+            let id = data["uid"] as? String
+            else { return nil }
+        self.username = username
+        self.email = email
+        self.avatarStringURL = avatarStringURL
+        self.description = description
+        self.sex = sex
+        self.id = id
+    }
+    
+    //MARK: METHODS
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

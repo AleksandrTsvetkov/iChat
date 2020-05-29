@@ -12,8 +12,8 @@ import SwiftUI
 class PeopleViewController: UIViewController {
     
     //MARK: PROPERTIES
-    //private let users = Bundle.main.decode(Array<UserModel>.self, from: "users.json")
-    private let users: Array<UserModel> = []
+    private var users: Array<UserModel> = []
+    private var usersListener: ListenerRegistration?
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, UserModel>?
     private let titleView = UIView()
@@ -28,8 +28,16 @@ class PeopleViewController: UIViewController {
         setupSearchBar()
         setupCollectionView()
         createDataSource()
-        reloadData(with: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(signOut))
+        
+        usersListener = ListenerService.shared.usersObserve(users: users, completion: { (result) in
+            switch result {
+            case .success(let users):
+                self.users = users
+                self.reloadData(with: nil)
+            case .failure(let error):
+                self.showAlert(title: "Ошибка", message: error.localizedDescription)
+            }
+        })
     }
     
     init(currentUser: UserModel) {
@@ -39,6 +47,10 @@ class PeopleViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        usersListener?.remove()
     }
     
     //MARK: USER EVENTS HANDLING
@@ -78,7 +90,7 @@ class PeopleViewController: UIViewController {
         view.addSubview(contentView)
         contentView.addSubview(collectionView)
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
-        collectionView.register(UICollectionViewCell.self.self, forCellWithReuseIdentifier: "cellid")
+        collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
     }
     
     //MARK: COMPOSITIONAL LAYOUT METHODS
@@ -128,8 +140,9 @@ class PeopleViewController: UIViewController {
             guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind") }
             switch section {
             case .users:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
-                cell.backgroundColor = .systemBlue
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCell.reuseId, for: indexPath) as? UserCell
+                cell?.configure(with: user)
+                cell?.backgroundColor = .white
                 return cell
             }
         })

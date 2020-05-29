@@ -10,8 +10,8 @@ import UIKit
 
 class AddPhotoView: UIView {
     
-    let circleImageView: UIImageView = {
-        let view = UIImageView()
+    let circleImageView: WebImageView = {
+        let view = WebImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = UIImage(named: "avatar")
         view.contentMode = .scaleAspectFill
