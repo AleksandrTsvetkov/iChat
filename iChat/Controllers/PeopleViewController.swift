@@ -19,6 +19,7 @@ class PeopleViewController: UIViewController {
     private let titleView = UIView()
     private let searchBar = UISearchBar()
     private let contentView = UIView()
+    private let currentUser: UserModel
     
     //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
@@ -29,6 +30,15 @@ class PeopleViewController: UIViewController {
         createDataSource()
         reloadData(with: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(signOut))
+    }
+    
+    init(currentUser: UserModel) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: USER EVENTS HANDLING

@@ -19,7 +19,7 @@ class ConversationsViewController: UIViewController {
     private let titleView = UIView()
     private let contentView = UIView()
     private let searchBar = UISearchBar()
-    
+    private let currentUser: UserModel
     
     //MARK: VIEW LIFCYCLE
     override func viewDidLoad() {
@@ -28,6 +28,15 @@ class ConversationsViewController: UIViewController {
         setupSearchBar()
         createDataSource()
         reloadData()
+    }
+    
+    init(currentUser: UserModel) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: SETUP

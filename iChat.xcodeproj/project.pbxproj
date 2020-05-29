@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F16F38F2480826E0084AEAD /* AppAuth.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F16F3882480826E0084AEAD /* AppAuth.xcframework */; };
+		1F16F3902480826E0084AEAD /* GoogleSignIn.bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F16F38A2480826E0084AEAD /* GoogleSignIn.bundle.bundle */; };
+		1F16F3912480826E0084AEAD /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F16F38B2480826E0084AEAD /* GoogleSignIn.bundle */; };
+		1F16F3922480826E0084AEAD /* GTMAppAuth.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F16F38C2480826E0084AEAD /* GTMAppAuth.xcframework */; };
+		1F16F3932480826E0084AEAD /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F16F38D2480826E0084AEAD /* GoogleSignIn.framework */; };
+		1F16F396248086040084AEAD /* GTMSessionFetcher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F16F395248086040084AEAD /* GTMSessionFetcher.xcframework */; };
 		1F1C719E2477F452003F3780 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C719D2477F452003F3780 /* ActiveChatCell.swift */; };
 		1F1C71A02478039A003F3780 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C719F2478039A003F3780 /* GradientView.swift */; };
 		1F1C71A224780778003F3780 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C71A124780778003F3780 /* WaitingChatCell.swift */; };
@@ -34,7 +40,6 @@
 		1F2F5BDE24800EAD00695742 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB624800E0400695742 /* GoogleUtilities.xcframework */; };
 		1F2F5BE024800EAE00695742 /* gRPC-C++.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA424800B2E00695742 /* gRPC-C++.xcframework */; };
 		1F2F5BE224800EB000695742 /* gRPC-Core.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA024800B2E00695742 /* gRPC-Core.xcframework */; };
-		1F2F5BE424800EB100695742 /* GTMSessionFetcher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5B9B24800A4F00695742 /* GTMSessionFetcher.xcframework */; };
 		1F2F5BE624800EB200695742 /* leveldb-library.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BA324800B2E00695742 /* leveldb-library.xcframework */; };
 		1F2F5BE824800EB300695742 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB324800E0300695742 /* nanopb.xcframework */; };
 		1F2F5BEA24800EB400695742 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */; };
@@ -76,6 +81,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F16F3882480826E0084AEAD /* AppAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AppAuth.xcframework; sourceTree = "<group>"; };
+		1F16F38A2480826E0084AEAD /* GoogleSignIn.bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle.bundle; sourceTree = "<group>"; };
+		1F16F38B2480826E0084AEAD /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		1F16F38C2480826E0084AEAD /* GTMAppAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GTMAppAuth.xcframework; sourceTree = "<group>"; };
+		1F16F38D2480826E0084AEAD /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		1F16F395248086040084AEAD /* GTMSessionFetcher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GTMSessionFetcher.xcframework; sourceTree = "<group>"; };
 		1F1C719D2477F452003F3780 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		1F1C719F2478039A003F3780 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		1F1C71A124780778003F3780 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
@@ -88,7 +99,6 @@
 		1F2B3BC52475A94F00632ECD /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		1F2B3BC72475AB5D00632ECD /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		1F2F5B9A24800A4E00695742 /* FirebaseAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseAuth.xcframework; sourceTree = "<group>"; };
-		1F2F5B9B24800A4F00695742 /* GTMSessionFetcher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GTMSessionFetcher.xcframework; sourceTree = "<group>"; };
 		1F2F5B9F24800B2E00695742 /* FirebaseFirestore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseFirestore.xcframework; sourceTree = "<group>"; };
 		1F2F5BA024800B2E00695742 /* gRPC-Core.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "gRPC-Core.xcframework"; sourceTree = "<group>"; };
 		1F2F5BA224800B2E00695742 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
@@ -154,7 +164,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F16F3922480826E0084AEAD /* GTMAppAuth.xcframework in Frameworks */,
 				1F2F5BCE24800E9F00695742 /* FirebaseAuth.xcframework in Frameworks */,
+				1F16F38F2480826E0084AEAD /* AppAuth.xcframework in Frameworks */,
 				1F2F5BE824800EB300695742 /* nanopb.xcframework in Frameworks */,
 				1F2F5BC624800E9900695742 /* abseil.xcframework in Frameworks */,
 				1F2F5BDC24800EAC00695742 /* GoogleDataTransportCCTSupport.xcframework in Frameworks */,
@@ -165,12 +177,13 @@
 				1F2F5BE624800EB200695742 /* leveldb-library.xcframework in Frameworks */,
 				1F2F5BD424800EA200695742 /* FirebaseFirestore.xcframework in Frameworks */,
 				1F2F5BD224800EA100695742 /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
+				1F16F396248086040084AEAD /* GTMSessionFetcher.xcframework in Frameworks */,
+				1F16F3932480826E0084AEAD /* GoogleSignIn.framework in Frameworks */,
 				1F2F5BCC24800E9D00695742 /* FirebaseAnalytics.framework in Frameworks */,
 				1F2F5BE024800EAE00695742 /* gRPC-C++.xcframework in Frameworks */,
 				1F2F5BD824800EAA00695742 /* GoogleAppMeasurement.framework in Frameworks */,
 				1F2F5BC824800E9B00695742 /* BoringSSL-GRPC.xcframework in Frameworks */,
 				1F2F5BEA24800EB400695742 /* PromisesObjC.xcframework in Frameworks */,
-				1F2F5BE424800EB100695742 /* GTMSessionFetcher.xcframework in Frameworks */,
 				1F2F5BCA24800E9C00695742 /* FIRAnalyticsConnector.framework in Frameworks */,
 				1F2F5BDA24800EAB00695742 /* GoogleDataTransport.xcframework in Frameworks */,
 			);
@@ -179,6 +192,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F16F3872480826E0084AEAD /* GoogleSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				1F16F3882480826E0084AEAD /* AppAuth.xcframework */,
+				1F16F3892480826E0084AEAD /* Resources */,
+				1F16F38C2480826E0084AEAD /* GTMAppAuth.xcframework */,
+				1F16F38D2480826E0084AEAD /* GoogleSignIn.framework */,
+			);
+			path = GoogleSignIn;
+			sourceTree = "<group>";
+		};
+		1F16F3892480826E0084AEAD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F16F38A2480826E0084AEAD /* GoogleSignIn.bundle.bundle */,
+				1F16F38B2480826E0084AEAD /* GoogleSignIn.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1F1C719C2477F433003F3780 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +251,8 @@
 				1F2F5BB324800E0300695742 /* nanopb.xcframework */,
 				1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */,
 				1F2F5B9A24800A4E00695742 /* FirebaseAuth.xcframework */,
-				1F2F5B9B24800A4F00695742 /* GTMSessionFetcher.xcframework */,
+				1F16F395248086040084AEAD /* GTMSessionFetcher.xcframework */,
+				1F16F3872480826E0084AEAD /* GoogleSignIn */,
 				1F2F5B9E24800B2E00695742 /* FirebaseFirestore */,
 			);
 			path = Frameworks;
@@ -439,9 +473,11 @@
 				1FFCABD324752B76008A1E7B /* LaunchScreen.storyboard in Resources */,
 				1FA161932476FDCE002906C3 /* activeChats.json in Resources */,
 				1F2F5BA924800B2E00695742 /* gRPCCertificates-Cpp.bundle in Resources */,
+				1F16F3912480826E0084AEAD /* GoogleSignIn.bundle in Resources */,
 				1FFCABD024752B76008A1E7B /* Assets.xcassets in Resources */,
 				1FA161942476FDCE002906C3 /* waitingChats.json in Resources */,
 				1F6B639B247BFBCC002A4DB9 /* GoogleService-Info.plist in Resources */,
+				1F16F3902480826E0084AEAD /* GoogleSignIn.bundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +669,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/GoogleSignIn",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iChat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
@@ -660,6 +697,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/GoogleSignIn",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iChat/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;

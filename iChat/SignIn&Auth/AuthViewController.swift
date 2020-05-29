@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import GoogleSignIn
 
 class AuthViewController: UIViewController {
     
@@ -36,9 +37,11 @@ class AuthViewController: UIViewController {
         
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
         
         signUpVC.delegate = self
         loginVC.delegate = self
+        GIDSignIn.sharedInstance()?.delegate = self
     }
     
     //MARK: USER EVENTS HANDLING
@@ -48,6 +51,11 @@ class AuthViewController: UIViewController {
     
     @objc private func loginButtonTapped() {
         present(loginVC, animated: true)
+    }
+    
+    @objc private func googleButtonTapped() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.signIn()
     }
     
     //MARK: SETUP
@@ -70,6 +78,43 @@ class AuthViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
+    }
+}
+
+//MARK: GIDSignInDelegate
+extension AuthViewController: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        
+        AuthService.shared.googleLogin(user: user, error: error) { (result) in
+            switch result {
+            case .success(let user):
+                FirestoreService.shared.getUserData(user: user) { (result) in
+                    let window = UIApplication.shared.connectedScenes
+                        .filter({ $0.activationState == .foregroundActive })
+                        .map({ $0 as? UIWindowScene })
+                        .compactMap({ $0 })
+                        .first?.windows
+                        .filter({ $0.isKeyWindow }).first
+                    let vc = window?.rootViewController
+                    switch result {
+                    case .success(let userModel):
+                        vc?.showAlert(title: "Успешно", message: "Вы авторизованы") {
+                            let mainTabBarController = MainTabBarController(currentUser: userModel)
+                            mainTabBarController.modalPresentationStyle = .fullScreen
+                            vc?.present(mainTabBarController, animated: true)
+                        }
+                    case .failure(_):
+                        vc?.showAlert(title: "Успешно", message: "Вы зарегистрированы") {
+                            vc?.present(SetupProfileViewController(currentUser: user), animated: true)
+                        }
+                    }
+                }
+            case .failure(let error):
+                self.showAlert(title: "Ошибка", message: error.localizedDescription)
+            }
+        }
+        
     }
 }
 

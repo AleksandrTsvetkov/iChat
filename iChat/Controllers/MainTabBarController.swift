@@ -10,14 +10,25 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
+    private var user: UserModel
+    
+    init(currentUser: UserModel = UserModel(username: "", avatarStringURL: "", id: "", email: "", description: "", sex: "")) {
+        self.user = currentUser
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = UIColor(hex: "8E5AF7")
         let boldConfiguration = UIImage.SymbolConfiguration(weight: .medium)
         let convImage = UIImage(systemName: "bubble.left.and.bubble.right", withConfiguration: boldConfiguration)
         let peopleImage = UIImage(systemName: "person.2", withConfiguration: boldConfiguration)
-        let conversationsViewController = ConversationsViewController()
-        let peopleViewController = PeopleViewController()
+        let conversationsViewController = ConversationsViewController(currentUser: user)
+        let peopleViewController = PeopleViewController(currentUser: user)
         
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(logOut))
         tabBar.addGestureRecognizer(gestureRecognizer)

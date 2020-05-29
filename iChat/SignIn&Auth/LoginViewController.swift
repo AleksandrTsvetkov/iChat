@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
@@ -61,8 +62,8 @@ class LoginViewController: UIViewController {
                 self.showAlert(title: "Успешно", message: String(describing: user.email)) {
                     FirestoreService.shared.getUserData(user: user) { (result) in
                         switch result {
-                        case .success(_):
-                            let mainTabBarController = MainTabBarController()
+                        case .success(let userModel):
+                            let mainTabBarController = MainTabBarController(currentUser: userModel)
                             mainTabBarController.modalPresentationStyle = .fullScreen
                             self.present(mainTabBarController, animated: true)
                         case .failure(_):
@@ -79,7 +80,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func googleButtonTapped() {
-        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.signIn()
     }
     
     //MARK: SETUP

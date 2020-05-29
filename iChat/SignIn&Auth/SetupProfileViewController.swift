@@ -36,6 +36,10 @@ class SetupProfileViewController: UIViewController {
     init(currentUser: User) {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
+        
+        if let username = currentUser.displayName {
+            fullNameTextField.text = username
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -52,7 +56,7 @@ class SetupProfileViewController: UIViewController {
             switch result {
             case .success(let user):
                 self.showAlert(title: "Успешно", message: "Приятного общения, \(user.username)") {
-                    let main = MainTabBarController()
+                    let main = MainTabBarController(currentUser: user)
                     main.modalPresentationStyle = .fullScreen
                     self.present(main, animated: true)
                 }
