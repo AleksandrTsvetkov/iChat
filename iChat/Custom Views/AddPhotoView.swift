@@ -10,7 +10,7 @@ import UIKit
 
 class AddPhotoView: UIView {
     
-    private let circleImageView: UIImageView = {
+    let circleImageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = UIImage(named: "avatar")
@@ -21,7 +21,7 @@ class AddPhotoView: UIView {
         return view
     }()
     
-    private let plusButton: UIButton = {
+    let plusButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "plus"), for: .normal)

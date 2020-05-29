@@ -64,6 +64,9 @@
 		1FC6874B247FC91700682AD9 /* UIView + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874A247FC91700682AD9 /* UIView + Alert.swift */; };
 		1FC6874D247FCA9000682AD9 /* AuthNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */; };
 		1FC6874F247FE9B700682AD9 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874E247FE9B700682AD9 /* FirestoreService.swift */; };
+		1FD57D25248133C50099A527 /* FirebaseStorage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD57D24248133C40099A527 /* FirebaseStorage.xcframework */; };
+		1FD57D27248134000099A527 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D26248134000099A527 /* StorageService.swift */; };
+		1FD57D2924813B1B0099A527 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD57D2824813B1B0099A527 /* UIImage + Extension.swift */; };
 		1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE027F724780A6F00F19FA0 /* ChatPreview.swift */; };
 		1FFCABC724752B74008A1E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC624752B74008A1E7B /* AppDelegate.swift */; };
 		1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCABC824752B74008A1E7B /* SceneDelegate.swift */; };
@@ -141,6 +144,9 @@
 		1FC6874A247FC91700682AD9 /* UIView + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Alert.swift"; sourceTree = "<group>"; };
 		1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationDelegate.swift; sourceTree = "<group>"; };
 		1FC6874E247FE9B700682AD9 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		1FD57D24248133C40099A527 /* FirebaseStorage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseStorage.xcframework; sourceTree = "<group>"; };
+		1FD57D26248134000099A527 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		1FD57D2824813B1B0099A527 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		1FE027F724780A6F00F19FA0 /* ChatPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPreview.swift; sourceTree = "<group>"; };
 		1FFCABC324752B74008A1E7B /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFCABC624752B74008A1E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 			files = (
 				1F16F3922480826E0084AEAD /* GTMAppAuth.xcframework in Frameworks */,
 				1F2F5BCE24800E9F00695742 /* FirebaseAuth.xcframework in Frameworks */,
+				1FD57D25248133C50099A527 /* FirebaseStorage.xcframework in Frameworks */,
 				1F16F38F2480826E0084AEAD /* AppAuth.xcframework in Frameworks */,
 				1F2F5BE824800EB300695742 /* nanopb.xcframework in Frameworks */,
 				1F2F5BC624800E9900695742 /* abseil.xcframework in Frameworks */,
@@ -252,6 +259,7 @@
 				1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */,
 				1F2F5B9A24800A4E00695742 /* FirebaseAuth.xcframework */,
 				1F16F395248086040084AEAD /* GTMSessionFetcher.xcframework */,
+				1FD57D24248133C40099A527 /* FirebaseStorage.xcframework */,
 				1F16F3872480826E0084AEAD /* GoogleSignIn */,
 				1F2F5B9E24800B2E00695742 /* FirebaseFirestore */,
 			);
@@ -339,6 +347,7 @@
 			children = (
 				1F8B27E1247EC28B0037A511 /* AuthService.swift */,
 				1FC6874E247FE9B700682AD9 /* FirestoreService.swift */,
+				1FD57D26248134000099A527 /* StorageService.swift */,
 				1F8B27E3247EEF140037A511 /* Validators.swift */,
 			);
 			path = Services;
@@ -384,6 +393,7 @@
 				1FFCABDE24754C9B008A1E7B /* UIColor + Extension.swift */,
 				1FFCABDF24754C9B008A1E7B /* UIFont + Fonts.swift */,
 				1FFCABE024754C9B008A1E7B /* UIImageView + Extension.swift */,
+				1FD57D2824813B1B0099A527 /* UIImage + Extension.swift */,
 				1F2B3BBD2475647D00632ECD /* UIStackView + Initializer.swift */,
 				1F632FEA2476B77B00C53929 /* UISegmentedControl + Initializer.swift */,
 				1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */,
@@ -516,12 +526,14 @@
 				1F5C16FA247BBB960095422D /* CustomTextField.swift in Sources */,
 				1FFCABE524754C9B008A1E7B /* UIImageView + Extension.swift in Sources */,
 				1FFCABE124754C9B008A1E7B /* UILabel + Initializer.swift in Sources */,
+				1FD57D27248134000099A527 /* StorageService.swift in Sources */,
 				1FC6874B247FC91700682AD9 /* UIView + Alert.swift in Sources */,
 				1FFCABE424754C9B008A1E7B /* UIFont + Fonts.swift in Sources */,
 				1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */,
 				1F2B3BC224756F2200632ECD /* OneLineTextField.swift in Sources */,
 				1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */,
 				1FFD08A3247ADFE000535591 /* UserModel.swift in Sources */,
+				1FD57D2924813B1B0099A527 /* UIImage + Extension.swift in Sources */,
 				1F1C71A224780778003F3780 /* WaitingChatCell.swift in Sources */,
 				1FFCABC924752B74008A1E7B /* SceneDelegate.swift in Sources */,
 				1F1C719E2477F452003F3780 /* ActiveChatCell.swift in Sources */,

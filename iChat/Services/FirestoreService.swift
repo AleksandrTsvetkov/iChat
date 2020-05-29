@@ -6,6 +6,8 @@
 //  Copyright © 2020 Александр Цветков. All rights reserved.
 //
 
+import UIKit
+
 class FirestoreService {
     
     static let shared = FirestoreService()
@@ -14,17 +16,29 @@ class FirestoreService {
         return db.collection("users")
     }
     
-    func saveProfileWith(id: String, email: String, username: String, avatarImageString: String, description: String, sex: String, completion: @escaping (Result<UserModel, Error>) -> Void) {
+    func saveProfileWith(id: String, email: String, username: String, avatarImage: UIImage?, description: String, sex: String, completion: @escaping (Result<UserModel, Error>) -> Void) {
         guard Validators.isFilled(username: username, description: description, sex: sex) else {
             completion(.failure(UserError.notFilled))
             return
         }
-        let userModel = UserModel(username: username, avatarStringURL: avatarImageString, id: id, email: email, description: description, sex: sex)
-        self.usersRef.document(userModel.id).setData(userModel.dictionary) { error in
-            if let error = error {
+        guard avatarImage != UIImage(named: "avatar") else {
+            completion(.failure(UserError.photoNotExist))
+            return
+        }
+        var userModel = UserModel(username: username, avatarStringURL: "not exist", id: id, email: email, description: description, sex: sex)
+        StorageService.shared.upload(photo: avatarImage!) { (result) in
+            switch result {
+            case .success(let url):
+                userModel.avatarStringURL = url.absoluteString
+                self.usersRef.document(userModel.id).setData(userModel.dictionary) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(userModel))
+                    }
+                }
+            case .failure(let error):
                 completion(.failure(error))
-            } else {
-                completion(.success(userModel))
             }
         }
     }
