@@ -56,6 +56,11 @@ class ConversationsViewController: UIViewController {
         })
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     init(currentUser: UserModel) {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
@@ -227,7 +232,9 @@ extension ConversationsViewController: UICollectionViewDelegate {
             chatRequest.delegate = self
             self.present(chatRequest, animated: true)
         case .activeChats:
-            print(indexPath)
+            let chatVC = ChatViewController(user: currentUser, chat: chat)
+            navigationController?.navigationBar.isHidden = false
+            navigationController?.pushViewController(chatVC, animated: true)
         }
     }
 }

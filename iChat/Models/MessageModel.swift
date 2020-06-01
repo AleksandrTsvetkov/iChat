@@ -7,19 +7,29 @@
 //
 
 import UIKit
+import MessageKit
 
-struct MessageModel: Hashable {
+struct MessageModel: Hashable, MessageType {
     let content: String
-    let senderId: String
-    let senderUsername: String
     let sendingDate: Date
     let id: String?
+    
+    var kind: MessageKind {
+        return .text(content)
+    }
+    var sender: SenderType
+    var messageId: String {
+        return id ?? UUID().uuidString
+    }
+    var sentDate: Date {
+        return sendingDate
+    }
     
     var dictionary: [String: Any] {
         let dict: [String: Any] = [
             "created": sendingDate,
-            "senderId": senderId,
-            "senderName": senderUsername,
+            "senderId": sender.senderId,
+            "senderName": sender.displayName,
             "content": content
         ]
         return dict
@@ -36,16 +46,22 @@ struct MessageModel: Hashable {
         
         self.id = document.documentID
         self.sendingDate = sendingDate.dateValue()
-        self.senderId = senderId
-        self.senderUsername = senderUsername
+        self.sender = SenderModel(senderId: senderId, displayName: senderUsername)
         self.content = content
     }
     
     init(user: UserModel, content: String) {
         self.content = content
-        self.senderId = user.id
-        self.senderUsername = user.username
+        sender = SenderModel(senderId: user.id, displayName: user.username)
         self.sendingDate = Date()
         self.id = nil
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(messageId)
+    }
+    
+    static func == (lhs: MessageModel, rhs: MessageModel) -> Bool {
+        return lhs.messageId == rhs.messageId
+       }
 }

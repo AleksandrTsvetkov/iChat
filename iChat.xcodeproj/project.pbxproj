@@ -44,6 +44,8 @@
 		1F2F5BE824800EB300695742 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB324800E0300695742 /* nanopb.xcframework */; };
 		1F2F5BEA24800EB400695742 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F5BB424800E0300695742 /* PromisesObjC.xcframework */; };
 		1F2F5BEF2480313800695742 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F5BEE2480313800695742 /* UserError.swift */; };
+		1F490DA3248543D7006D041D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F490DA2248543D7006D041D /* ChatViewController.swift */; };
+		1F490DA524854895006D041D /* SenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F490DA424854895006D041D /* SenderModel.swift */; };
 		1F5C16F6247B8FD70095422D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F5247B8FD70095422D /* ProfileViewController.swift */; };
 		1F5C16F8247B9ACC0095422D /* UIView + Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */; };
 		1F5C16FA247BBB960095422D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C16F9247BBB960095422D /* CustomTextField.swift */; };
@@ -61,6 +63,12 @@
 		1FA161932476FDCE002906C3 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FA161912476FDCE002906C3 /* activeChats.json */; };
 		1FA161942476FDCE002906C3 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FA161922476FDCE002906C3 /* waitingChats.json */; };
 		1FA161962476FE44002906C3 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA161952476FE44002906C3 /* Bundle-Decodable.swift */; };
+		1FA9EDAB2485807C00ABC7BE /* MessageInputBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F490DBC24857547006D041D /* MessageInputBar.framework */; };
+		1FA9EDAE2485808000ABC7BE /* InputBarAccessoryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F490DBD24857547006D041D /* InputBarAccessoryView.framework */; };
+		1FA9EDB12485833100ABC7BE /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F490DBE24857547006D041D /* MessageKit.framework */; };
+		1FA9EDB42485837B00ABC7BE /* InputBarAccessoryView.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1F490DBD24857547006D041D /* InputBarAccessoryView.framework */; };
+		1FA9EDB52485837B00ABC7BE /* MessageInputBar.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1F490DBC24857547006D041D /* MessageInputBar.framework */; };
+		1FA9EDB62485837B00ABC7BE /* MessageKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1F490DBE24857547006D041D /* MessageKit.framework */; };
 		1FAFF8D7247AA34B00F967FA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFF8D6247AA34B00F967FA /* SectionHeader.swift */; };
 		1FC6874B247FC91700682AD9 /* UIView + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874A247FC91700682AD9 /* UIView + Alert.swift */; };
 		1FC6874D247FCA9000682AD9 /* AuthNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */; };
@@ -129,6 +137,11 @@
 		1F2F5BBA24800E0500695742 /* FirebaseCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FirebaseCore.xcframework; sourceTree = "<group>"; };
 		1F2F5BEC24800F3F00695742 /* iChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		1F2F5BEE2480313800695742 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		1F490DA2248543D7006D041D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1F490DA424854895006D041D /* SenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderModel.swift; sourceTree = "<group>"; };
+		1F490DBC24857547006D041D /* MessageInputBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageInputBar.framework; path = Carthage/Build/iOS/MessageInputBar.framework; sourceTree = SOURCE_ROOT; };
+		1F490DBD24857547006D041D /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputBarAccessoryView.framework; path = Carthage/Build/iOS/InputBarAccessoryView.framework; sourceTree = SOURCE_ROOT; };
+		1F490DBE24857547006D041D /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = SOURCE_ROOT; };
 		1F5C16F5247B8FD70095422D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F5C16F7247B9ACC0095422D /* UIView + Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Corners.swift"; sourceTree = "<group>"; };
 		1F5C16F9247BBB960095422D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -193,6 +206,7 @@
 				1F2F5BDE24800EAD00695742 /* GoogleUtilities.xcframework in Frameworks */,
 				1F2F5BE624800EB200695742 /* leveldb-library.xcframework in Frameworks */,
 				1F2F5BD424800EA200695742 /* FirebaseFirestore.xcframework in Frameworks */,
+				1FA9EDAB2485807C00ABC7BE /* MessageInputBar.framework in Frameworks */,
 				1F2F5BD224800EA100695742 /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
 				1F16F396248086040084AEAD /* GTMSessionFetcher.xcframework in Frameworks */,
 				1F16F3932480826E0084AEAD /* GoogleSignIn.framework in Frameworks */,
@@ -202,7 +216,9 @@
 				1F2F5BC824800E9B00695742 /* BoringSSL-GRPC.xcframework in Frameworks */,
 				1F2F5BEA24800EB400695742 /* PromisesObjC.xcframework in Frameworks */,
 				1F2F5BCA24800E9C00695742 /* FIRAnalyticsConnector.framework in Frameworks */,
+				1FA9EDB12485833100ABC7BE /* MessageKit.framework in Frameworks */,
 				1F2F5BDA24800EAB00695742 /* GoogleDataTransport.xcframework in Frameworks */,
+				1FA9EDAE2485808000ABC7BE /* InputBarAccessoryView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +263,7 @@
 				1FE027F724780A6F00F19FA0 /* ChatPreview.swift */,
 				1FD57D3024817B370099A527 /* MessageModel.swift */,
 				1FFD08A2247ADFE000535591 /* UserModel.swift */,
+				1F490DA424854895006D041D /* SenderModel.swift */,
 				1F8B27E5247EF4400037A511 /* AuthError.swift */,
 				1F2F5BEE2480313800695742 /* UserError.swift */,
 				1FC6874C247FCA9000682AD9 /* AuthNavigationDelegate.swift */,
@@ -257,6 +274,9 @@
 		1F2F5B9924800A3D00695742 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F490DBD24857547006D041D /* InputBarAccessoryView.framework */,
+				1F490DBC24857547006D041D /* MessageInputBar.framework */,
+				1F490DBE24857547006D041D /* MessageKit.framework */,
 				1F2F5BAF24800B8900695742 /* module.modulemap */,
 				1F2F5BAE24800B7F00695742 /* Firebase.h */,
 				1F2F5BB024800E0200695742 /* FIRAnalyticsConnector.framework */,
@@ -351,6 +371,7 @@
 				1F632FF42476C1F600C53929 /* ConversationsViewController.swift */,
 				1F5C16F5247B8FD70095422D /* ProfileViewController.swift */,
 				1F5C16FD247BD60E0095422D /* ChatRequestViewController.swift */,
+				1F490DA2248543D7006D041D /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -445,6 +466,7 @@
 				1FFCABBF24752B74008A1E7B /* Sources */,
 				1FFCABC024752B74008A1E7B /* Frameworks */,
 				1FFCABC124752B74008A1E7B /* Resources */,
+				1FA2C50A24857B2D001DC6AB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -503,10 +525,39 @@
 				1FA161942476FDCE002906C3 /* waitingChats.json in Resources */,
 				1F6B639B247BFBCC002A4DB9 /* GoogleService-Info.plist in Resources */,
 				1F16F3902480826E0084AEAD /* GoogleSignIn.bundle.bundle in Resources */,
+				1FA9EDB42485837B00ABC7BE /* InputBarAccessoryView.framework in Resources */,
+				1FA9EDB52485837B00ABC7BE /* MessageInputBar.framework in Resources */,
+				1FA9EDB62485837B00ABC7BE /* MessageKit.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FA2C50A24857B2D001DC6AB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MessageKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MessageInputBar.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/InputBarAccessoryView.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MessageKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MessageInputBar.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/InputBarAccessoryView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FFCABBF24752B74008A1E7B /* Sources */ = {
@@ -538,6 +589,7 @@
 				1FD57D2B24815A8A0099A527 /* ListenerService.swift in Sources */,
 				1F5C16F6247B8FD70095422D /* ProfileViewController.swift in Sources */,
 				1FFCABE324754C9B008A1E7B /* UIColor + Extension.swift in Sources */,
+				1F490DA524854895006D041D /* SenderModel.swift in Sources */,
 				1F2B3BC02475688200632ECD /* SignUpViewController.swift in Sources */,
 				1F632FEB2476B77B00C53929 /* UISegmentedControl + Initializer.swift in Sources */,
 				1F5C16FA247BBB960095422D /* CustomTextField.swift in Sources */,
@@ -547,6 +599,7 @@
 				1FC6874B247FC91700682AD9 /* UIView + Alert.swift in Sources */,
 				1FFCABE424754C9B008A1E7B /* UIFont + Fonts.swift in Sources */,
 				1FFCABE924755A2E008A1E7B /* UIColor + HexValue.swift in Sources */,
+				1F490DA3248543D7006D041D /* ChatViewController.swift in Sources */,
 				1F2B3BC224756F2200632ECD /* OneLineTextField.swift in Sources */,
 				1FE027F824780A6F00F19FA0 /* ChatPreview.swift in Sources */,
 				1FFD08A3247ADFE000535591 /* UserModel.swift in Sources */,
@@ -702,9 +755,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Frameworks/GoogleSignIn",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iChat/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -730,9 +784,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Frameworks/GoogleSignIn",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iChat/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
