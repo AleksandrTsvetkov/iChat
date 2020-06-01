@@ -50,5 +50,47 @@ class ListenerService {
         return usersListener
     }
     
+    func waitingChatsObserve(chats: Array<ChatPreview>,
+                             completion: @escaping (Result<[ChatPreview], Error>) -> Void) -> ListenerRegistration? {
+        let chatsRef = db.collection(["users", currentUserId, "waitingChats"].joined(separator: "/"))
+        return chatsObserve(chats: chats, chatsRef: chatsRef, completion: completion)
+    }
+    
+    func activeChatsObserve(chats: Array<ChatPreview>,
+                            completion: @escaping (Result<[ChatPreview], Error>) -> Void) -> ListenerRegistration? {
+        let chatsRef = db.collection(["users", currentUserId, "activeChats"].joined(separator: "/"))
+        return chatsObserve(chats: chats, chatsRef: chatsRef, completion: completion)
+    }
+    
+    private func chatsObserve(chats: Array<ChatPreview>, chatsRef: CollectionReference,
+                              completion: @escaping (Result<[ChatPreview], Error>) -> Void) -> ListenerRegistration? {
+        var chats = chats
+        let chatsListener = chatsRef.addSnapshotListener { (querySnapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard let snapshot = querySnapshot else { return }
+            snapshot.documentChanges.forEach { (diff) in
+                guard let chat = ChatPreview(document: diff.document) else { return }
+                switch diff.type {
+                case .added:
+                    guard
+                        !chats.contains(chat)
+                        else { return }
+                    chats.append(chat)
+                case .modified:
+                    guard let index = chats.firstIndex(of: chat) else { return }
+                    chats[index] = chat
+                case .removed:
+                    guard let index = chats.firstIndex(of: chat) else { return }
+                    chats.remove(at: index)
+                }
+            }
+            completion(.success(chats))
+        }
+        return chatsListener
+    }
+    
     fileprivate init() {}
 }

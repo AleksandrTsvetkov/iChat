@@ -13,7 +13,7 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     //MARK: PROPERTIES
     static var reuseId: String = "WaitingChatCell"
-    private let friendImageView = UIImageView()
+    private let friendImageView = WebImageView()
     
     //MARK: VIEW LIFECYCLE
     override init(frame: CGRect) {
@@ -29,7 +29,7 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     //MARK: SETUP CELL
     func configure(with value: ChatPreview) {
-        friendImageView.image = UIImage(named: value.friendAvatarImageString)
+        friendImageView.set(imageURL: value.friendAvatarImageString)
     }
     
     private func setupConstraints() {

@@ -13,7 +13,7 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     //MARK: PROPERTIES
     static var reuseId: String = "ActiveChatCell"
-    private let friendImageView = UIImageView()
+    private let friendImageView = WebImageView()
     private let friendNameLabel = UILabel(text: "User name", font: .laoSangamMN20())
     private let lastMessageLabel = UILabel(text: "How are you?", font: .laoSangamMN18())
     private let gradientView = GradientView(from: .topTrailing, to: .bottomLeading, startColor: UIColor(hex: "C9A1F0"), endColor: UIColor(hex: "7AB2EB"))
@@ -69,7 +69,7 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configure(with value: ChatPreview) {
-        friendImageView.image = UIImage(named: value.friendAvatarImageString)
+        friendImageView.set(imageURL: value.friendAvatarImageString)
         friendNameLabel.text = value.friendUsername
         lastMessageLabel.text = value.lastMessage
     }

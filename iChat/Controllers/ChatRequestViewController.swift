@@ -13,22 +13,52 @@ class ChatRequestViewController: UIViewController {
 
     //MARK: PROPERTIES
     private let containerView = UIView()
-    private let imageView = UIImageView(image: UIImage(named: "human5"), contentMode: .scaleAspectFill)
+    private let imageView = WebImageView(image: UIImage(named: "human5"), contentMode: .scaleAspectFill)
     private let nameLabel = UILabel(text: "Peter Ben", font: .systemFont(ofSize: 20, weight: .light))
     private let aboutMeLabel = UILabel(text: "You have the opportunity to start a new chat", font: .systemFont(ofSize: 16, weight: .light))
     private let acceptButton = UIButton(title: "ACCEPT", titleColor: .white, backgroundColor: .black, font: .laoSangamMN20(), cornerRadius: 10)
     private let denyButton = UIButton(title: "DENY", titleColor: UIColor(hex: "D53333"), backgroundColor: .mainWhite(), font: .laoSangamMN20(), cornerRadius: 10)
+    private var chat: ChatPreview
+    weak var delegate: WaitingChatsNavigation?
     
     //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .mainWhite()
         setupUserInterface()
+        
+        denyButton.addTarget(self, action: #selector(denyButtonTapped), for: .touchUpInside)
+        acceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         acceptButton.applyGradients(cornerRadius: 10)
+    }
+    
+    init(chat: ChatPreview) {
+        self.chat = chat
+        nameLabel.text = chat.friendUsername
+        aboutMeLabel.text = chat.lastMessage
+        imageView.set(imageURL: chat.friendAvatarImageString)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: USER EVENTS HANDLING
+    @objc private func denyButtonTapped() {
+        self.dismiss(animated: true) {
+            self.delegate?.removeWaitingChat(self.chat)
+        }
+    }
+    
+    @objc private func acceptButtonTapped() {
+        self.dismiss(animated: true) {
+            self.delegate?.changeToActive(self.chat)
+        }
     }
     
     //MARK: SETUP
@@ -81,22 +111,3 @@ class ChatRequestViewController: UIViewController {
     }
 }
 
-//MARK: CANVAS PREVIEW
-struct ChatRequestVCProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let chatRequestViewController = ChatRequestViewController()
-        
-        func makeUIViewController(context: Context) -> UIViewController {
-            return chatRequestViewController
-        }
-        
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-            
-        }
-    }
-}
