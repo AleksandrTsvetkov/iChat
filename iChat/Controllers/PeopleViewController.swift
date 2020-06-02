@@ -83,8 +83,9 @@ class PeopleViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        contentView.frame = CGRect(x: 0, y: 0 + 80, width: view.frame.width, height: view.bounds.height)
-        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: createCompositionalLayout())
+        contentView.frame = CGRect(x: 0, y: 0 + 80, width: view.frame.width, height: view.frame.height)
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: contentView.frame.height - 130)
+        collectionView = UICollectionView(frame: frame, collectionViewLayout: createCompositionalLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(contentView)
