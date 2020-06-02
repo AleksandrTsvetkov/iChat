@@ -14,8 +14,9 @@ class ChatViewController: MessagesViewController {
     
     //MARK: PROPERTIES
     private let user: UserModel
-    private let chat: ChatPreview
+    private let chat: ChatModel
     private var messages: Array<MessageModel> = []
+    private var messageListener: ListenerRegistration?
     
     //MARK: VIEW LIFECYCLE
     override func viewDidLoad() {
@@ -30,9 +31,17 @@ class ChatViewController: MessagesViewController {
             layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
             layout.textMessageSizeCalculator.incomingAvatarSize = .zero
         }
+        messageListener = ListenerService.shared.messagesObserve(chat: chat, completion: { result in
+            switch result {
+            case .success(let message):
+                self.insertNewMessage(message: message)
+            case .failure(let error):
+                self.showAlert(title: "Ошибка", message: error.localizedDescription)
+            }
+        })
     }
     
-    init(user: UserModel, chat: ChatPreview) {
+    init(user: UserModel, chat: ChatModel) {
         self.user = user
         self.chat = chat
         super.init(nibName: nil, bundle: nil)
@@ -44,11 +53,22 @@ class ChatViewController: MessagesViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        messageListener?.remove()
+    }
+    
     private func insertNewMessage(message: MessageModel) {
         guard !messages.contains(message) else { return }
         messages.append(message)
         messages.sort { $0.sendingDate < $1.sendingDate }
+        let isLatestMessage = messages.firstIndex(of: message) == (messages.count - 1)
+        let shouldScrollToBottom = messagesCollectionView.isAtBottom && isLatestMessage
         messagesCollectionView.reloadData()
+        if shouldScrollToBottom {
+            DispatchQueue.main.async {
+                self.messagesCollectionView.scrollToBottom(animated: true)
+            }
+        }
     }
     
     //MARK: SETUP
@@ -102,6 +122,14 @@ extension ChatViewController: MessagesDataSource {
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return 1
     }
+    
+    func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        if indexPath.item % 4 == 0 {
+            return NSAttributedString(string: MessageKitDateFormatter.shared.string(from: message.sentDate),
+            attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        }
+        return nil
+    }
 }
 
 //MARK: MessagesLayoutDelegate
@@ -109,6 +137,13 @@ extension ChatViewController: MessagesLayoutDelegate {
     
     func footerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return CGSize(width: 0, height: 8)
+    }
+    
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        if indexPath.item % 4 == 0 {
+            return 30
+        }
+        return 0
     }
 }
 
@@ -141,7 +176,29 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         let message = MessageModel(user: user, content: text)
-        insertNewMessage(message: message)
+        FirestoreService.shared.sendMessage(chat: chat, message: message) { result in
+            switch result {
+            case .success:
+                self.messagesCollectionView.scrollToBottom()
+            case .failure(let error):
+                self.showAlert(title: "Ошибка", message: error.localizedDescription)
+            }
+        }
         inputBar.inputTextView.text = ""
+    }
+}
+
+extension UIScrollView {
+    
+    var isAtBottom: Bool {
+        return contentOffset.y >= verticalOffsetForBottom
+    }
+    
+    var verticalOffsetForBottom: CGFloat {
+        let scrollViewHeight = bounds.height
+        let scrollContentSizeHeight = contentSize.height
+        let bottomInset = contentInset.bottom
+        let scrollViewBottomOffset = scrollContentSizeHeight + bottomInset - scrollViewHeight
+        return scrollViewBottomOffset
     }
 }

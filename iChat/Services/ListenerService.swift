@@ -50,20 +50,42 @@ class ListenerService {
         return usersListener
     }
     
-    func waitingChatsObserve(chats: Array<ChatPreview>,
-                             completion: @escaping (Result<[ChatPreview], Error>) -> Void) -> ListenerRegistration? {
+    func waitingChatsObserve(chats: Array<ChatModel>,
+                             completion: @escaping (Result<[ChatModel], Error>) -> Void) -> ListenerRegistration? {
         let chatsRef = db.collection(["users", currentUserId, "waitingChats"].joined(separator: "/"))
         return chatsObserve(chats: chats, chatsRef: chatsRef, completion: completion)
     }
     
-    func activeChatsObserve(chats: Array<ChatPreview>,
-                            completion: @escaping (Result<[ChatPreview], Error>) -> Void) -> ListenerRegistration? {
+    func activeChatsObserve(chats: Array<ChatModel>,
+                            completion: @escaping (Result<[ChatModel], Error>) -> Void) -> ListenerRegistration? {
         let chatsRef = db.collection(["users", currentUserId, "activeChats"].joined(separator: "/"))
         return chatsObserve(chats: chats, chatsRef: chatsRef, completion: completion)
     }
     
-    private func chatsObserve(chats: Array<ChatPreview>, chatsRef: CollectionReference,
-                              completion: @escaping (Result<[ChatPreview], Error>) -> Void) -> ListenerRegistration? {
+    func messagesObserve(chat: ChatModel, completion: @escaping (Result<MessageModel, Error>) -> Void) -> ListenerRegistration? {
+        let ref = usersRef.document(currentUserId).collection("activeChats").document(chat.friendId).collection("messages")
+        let messageListener = ref.addSnapshotListener { (querySnapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            }
+            guard let snapshot = querySnapshot else { return }
+            snapshot.documentChanges.forEach { diff in
+                guard let message = MessageModel(document: diff.document) else { return }
+                switch diff.type {
+                case .added:
+                    completion(.success(message))
+                case .modified:
+                    break
+                case .removed:
+                    break
+                }
+            }
+        }
+        return messageListener
+    }
+    
+    private func chatsObserve(chats: Array<ChatModel>, chatsRef: CollectionReference,
+                              completion: @escaping (Result<[ChatModel], Error>) -> Void) -> ListenerRegistration? {
         var chats = chats
         let chatsListener = chatsRef.addSnapshotListener { (querySnapshot, error) in
             if let error = error {
@@ -72,7 +94,7 @@ class ListenerService {
             }
             guard let snapshot = querySnapshot else { return }
             snapshot.documentChanges.forEach { (diff) in
-                guard let chat = ChatPreview(document: diff.document) else { return }
+                guard let chat = ChatModel(document: diff.document) else { return }
                 switch diff.type {
                 case .added:
                     guard

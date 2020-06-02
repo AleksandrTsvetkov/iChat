@@ -1,5 +1,5 @@
 //
-//  ChatPreview.swift
+//  ChatModel.swift
 //  iChat
 //
 //  Created by Александр Цветков on 22.05.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ChatPreview: Hashable, Decodable {
+struct ChatModel: Hashable, Decodable {
     
     var friendUsername: String
     var friendAvatarImageString: String
@@ -48,7 +48,7 @@ struct ChatPreview: Hashable, Decodable {
         hasher.combine(friendId)
     }
     
-    static func == (lhs: ChatPreview, rhs: ChatPreview) -> Bool {
+    static func == (lhs: ChatModel, rhs: ChatModel) -> Bool {
         return lhs.friendId == rhs.friendId
     }
 }

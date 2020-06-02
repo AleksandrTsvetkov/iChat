@@ -18,7 +18,7 @@ class ChatRequestViewController: UIViewController {
     private let aboutMeLabel = UILabel(text: "You have the opportunity to start a new chat", font: .systemFont(ofSize: 16, weight: .light))
     private let acceptButton = UIButton(title: "ACCEPT", titleColor: .white, backgroundColor: .black, font: .laoSangamMN20(), cornerRadius: 10)
     private let denyButton = UIButton(title: "DENY", titleColor: UIColor(hex: "D53333"), backgroundColor: .mainWhite(), font: .laoSangamMN20(), cornerRadius: 10)
-    private var chat: ChatPreview
+    private var chat: ChatModel
     weak var delegate: WaitingChatsNavigation?
     
     //MARK: VIEW LIFECYCLE
@@ -36,7 +36,7 @@ class ChatRequestViewController: UIViewController {
         acceptButton.applyGradients(cornerRadius: 10)
     }
     
-    init(chat: ChatPreview) {
+    init(chat: ChatModel) {
         self.chat = chat
         nameLabel.text = chat.friendUsername
         aboutMeLabel.text = chat.lastMessage

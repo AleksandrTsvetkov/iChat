@@ -55,7 +55,7 @@ class FirestoreService {
         let messageReference = reference.document(self.currentUser.id).collection("messages")
         
         let message = MessageModel(user: currentUser, content: message)
-        let chat = ChatPreview(friendUsername: currentUser.username, friendAvatarImageString: currentUser.avatarStringURL,
+        let chat = ChatModel(friendUsername: currentUser.username, friendAvatarImageString: currentUser.avatarStringURL,
                                lastMessage: message.content, friendId: currentUser.id)
         reference.document(currentUser.id).setData(chat.dictionary) { error in
             if let error = error {
@@ -72,7 +72,7 @@ class FirestoreService {
         }
     }
     
-    func deleteWaitingChat(chat: ChatPreview, completion: @escaping (Result<Void, Error>) -> Void) {
+    func deleteWaitingChat(chat: ChatModel, completion: @escaping (Result<Void, Error>) -> Void) {
         waitingChatsRef.document(chat.friendId).delete { error in
             if let error = error {
                 completion(.failure(error))
@@ -82,7 +82,7 @@ class FirestoreService {
         }
     }
     
-    func deleteMessages(chat: ChatPreview, completion: @escaping (Result<Void, Error>) -> Void) {
+    func deleteMessages(chat: ChatModel, completion: @escaping (Result<Void, Error>) -> Void) {
         let reference = waitingChatsRef.document(chat.friendId).collection("messages")
         getWaitingChatMessages(chat: chat) { result in
             switch result {
@@ -104,7 +104,7 @@ class FirestoreService {
         }
     }
     
-    func getWaitingChatMessages(chat: ChatPreview, completion: @escaping (Result<[MessageModel], Error>) -> Void) {
+    func getWaitingChatMessages(chat: ChatModel, completion: @escaping (Result<[MessageModel], Error>) -> Void) {
         var messages: Array<MessageModel> = []
         let reference = waitingChatsRef.document(chat.friendId).collection("messages")
         reference.getDocuments { (querySnapshot, error) in
@@ -120,7 +120,7 @@ class FirestoreService {
         }
     }
     
-    func changeToActive(chat: ChatPreview, completion: @escaping (Result<Void, Error>) -> Void) {
+    func changeToActive(chat: ChatModel, completion: @escaping (Result<Void, Error>) -> Void) {
         getWaitingChatMessages(chat: chat) { result in
             switch result {
             case .success(let messages):
@@ -145,7 +145,7 @@ class FirestoreService {
         }
     }
     
-    func createActiveChat(chat: ChatPreview, messages: Array<MessageModel>, completion: @escaping (Result<Void, Error>) -> Void) {
+    func createActiveChat(chat: ChatModel, messages: Array<MessageModel>, completion: @escaping (Result<Void, Error>) -> Void) {
         let messageRef = activeChatsRef.document(chat.friendId).collection("messages")
         activeChatsRef.document(chat.friendId).setData(chat.dictionary) { error in
             if let error = error {
@@ -154,6 +154,35 @@ class FirestoreService {
             }
             for message in messages {
                 messageRef.addDocument(data: message.dictionary) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                        return
+                    }
+                    completion(.success(Void()))
+                }
+            }
+        }
+    }
+    
+    func sendMessage(chat: ChatModel, message: MessageModel, completion: @escaping (Result<Void, Error>) -> Void) {
+        let friendRef = usersRef.document(chat.friendId).collection("activeChats").document(currentUser.id)
+        let friendMessageRef = friendRef.collection("messages")
+        let myMessageRef = usersRef.document(currentUser.id).collection("activeChats").document(chat.friendId).collection("message")
+        let chatForFriend = ChatModel(friendUsername: currentUser.username,
+                                      friendAvatarImageString: currentUser.avatarStringURL,
+                                      lastMessage: message.content,
+                                      friendId: currentUser.id)
+        friendRef.setData(chatForFriend.dictionary) { error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            friendMessageRef.addDocument(data: message.dictionary) { error in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                myMessageRef.addDocument(data: message.dictionary) { error in
                     if let error = error {
                         completion(.failure(error))
                         return

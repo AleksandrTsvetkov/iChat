@@ -12,10 +12,10 @@ import SwiftUI
 class ConversationsViewController: UIViewController {
     
     //MARK: PROPERTIES
-    private var activeChatPreviews: Array<ChatPreview> = []
-    private var waitingChatPreviews: Array<ChatPreview> = []
+    private var activeChatPreviews: Array<ChatModel> = []
+    private var waitingChatPreviews: Array<ChatModel> = []
     private var collectionView: UICollectionView!
-    private var dataSource: UICollectionViewDiffableDataSource<Section, ChatPreview>?
+    private var dataSource: UICollectionViewDiffableDataSource<Section, ChatModel>?
     private let titleView = UIView()
     private let contentView = UIView()
     private let searchBar = UISearchBar()
@@ -189,14 +189,14 @@ class ConversationsViewController: UIViewController {
     }
     
     private func reloadData() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, ChatPreview>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ChatModel>()
         snapshot.appendSections([.waitingChats, .activeChats])
         snapshot.appendItems(activeChatPreviews, toSection: .activeChats)
         snapshot.appendItems(waitingChatPreviews, toSection: .waitingChats)
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
     
-    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: ChatPreview, for indexPath: IndexPath) -> T {
+    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: ChatModel, for indexPath: IndexPath) -> T {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T
             else { fatalError("Unable to dequeue \(cellType)") }
         cell.configure(with: value)
@@ -242,7 +242,7 @@ extension ConversationsViewController: UICollectionViewDelegate {
 //MARK: WaitingChatsNavigation
 extension ConversationsViewController: WaitingChatsNavigation {
     
-    func removeWaitingChat(_ chat: ChatPreview) {
+    func removeWaitingChat(_ chat: ChatModel) {
         FirestoreService.shared.deleteWaitingChat(chat: chat) { result in
             switch result {
             case .success:
@@ -253,7 +253,7 @@ extension ConversationsViewController: WaitingChatsNavigation {
         }
     }
     
-    func changeToActive(_ chat: ChatPreview) {
+    func changeToActive(_ chat: ChatModel) {
         FirestoreService.shared.changeToActive(chat: chat) { result in
             switch result {
             case .success:

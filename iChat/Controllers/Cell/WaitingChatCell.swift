@@ -28,7 +28,7 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     //MARK: SETUP CELL
-    func configure(with value: ChatPreview) {
+    func configure(with value: ChatModel) {
         friendImageView.set(imageURL: value.friendAvatarImageString)
     }
     

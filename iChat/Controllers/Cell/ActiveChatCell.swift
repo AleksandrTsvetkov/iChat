@@ -68,7 +68,7 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
         ])
     }
     
-    func configure(with value: ChatPreview) {
+    func configure(with value: ChatModel) {
         friendImageView.set(imageURL: value.friendAvatarImageString)
         friendNameLabel.text = value.friendUsername
         lastMessageLabel.text = value.lastMessage
