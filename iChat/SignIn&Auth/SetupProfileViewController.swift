@@ -32,6 +32,9 @@ class SetupProfileViewController: UIViewController {
         
         goToChatsButton.addTarget(self, action: #selector(goToChatsButtonTapped), for: .touchUpInside)
         addPhotoView.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+        
+        fullNameTextField.addTarget(self, action: #selector(hideKeyboard), for: .primaryActionTriggered)
+        aboutMeTextField.addTarget(self, action: #selector(hideKeyboard), for: .primaryActionTriggered)
     }
     
     init(currentUser: User) {
@@ -75,6 +78,10 @@ class SetupProfileViewController: UIViewController {
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
         present(imagePickerController, animated: true)
+    }
+    
+    @objc private func hideKeyboard() {
+        self.resignFirstResponder()
     }
     
     //MARK: SETUP

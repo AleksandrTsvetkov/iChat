@@ -167,7 +167,7 @@ class FirestoreService {
     func sendMessage(chat: ChatModel, message: MessageModel, completion: @escaping (Result<Void, Error>) -> Void) {
         let friendRef = usersRef.document(chat.friendId).collection("activeChats").document(currentUser.id)
         let friendMessageRef = friendRef.collection("messages")
-        let myMessageRef = usersRef.document(currentUser.id).collection("activeChats").document(chat.friendId).collection("message")
+        let myMessageRef = usersRef.document(currentUser.id).collection("activeChats").document(chat.friendId).collection("messages")
         let chatForFriend = ChatModel(friendUsername: currentUser.username,
                                       friendAvatarImageString: currentUser.avatarStringURL,
                                       lastMessage: message.content,

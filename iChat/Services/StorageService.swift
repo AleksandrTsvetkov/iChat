@@ -16,6 +16,9 @@ class StorageService {
     private var avatarsRef: StorageReference {
         return storageRef.child("avatars")
     }
+    private var chatsRef: StorageReference {
+        return storageRef.child("images")
+    }
     private var currentUserId: String {
         return Auth.auth().currentUser!.uid
     }
@@ -41,6 +44,45 @@ class StorageService {
                 guard let url = url else { return }
                 completion(.success(url))
             }
+        }
+    }
+    
+    func uploadImage(image: UIImage, chat: ChatModel, completion: @escaping (Result<URL, Error>) -> Void) {
+        guard
+        let scaledImage = image.scaledToSafeUploadSize,
+        let imageData = scaledImage.jpegData(compressionQuality: 0.4)
+        else { return }
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        let imageName = [UUID().uuidString, String(Date().timeIntervalSince1970)].joined()
+        let chatName = [chat.friendUsername, Auth.auth().currentUser!.uid].joined()
+        chatsRef.child(chatName).child(imageName).putData(imageData, metadata: metadata) { (metadata, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard metadata != nil else { return }
+            self.chatsRef.child(chatName).child(imageName).downloadURL { (url, error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                guard let url = url else { return }
+                completion(.success(url))
+            }
+        }
+    }
+    
+    func downloadImage(url: URL, completion: @escaping (Result<UIImage?, Error>) -> Void) {
+        let ref = Storage.storage().reference(forURL: url.absoluteString)
+        let megaByte = Int64(1 * 1024 * 1024)
+        ref.getData(maxSize: megaByte) { (data, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard let data = data else { return }
+            completion(.success(UIImage(data: data)))
         }
     }
     

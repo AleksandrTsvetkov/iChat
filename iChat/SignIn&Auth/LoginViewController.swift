@@ -46,6 +46,9 @@ class LoginViewController: UIViewController {
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
+        
+        emailTextField.addTarget(self, action: #selector(hideKeyboard), for: .primaryActionTriggered)
+        passwordTextField.addTarget(self, action: #selector(hideKeyboard), for: .primaryActionTriggered)
     }
     
     //MARK: USER EVENTS HANDLING
@@ -82,6 +85,10 @@ class LoginViewController: UIViewController {
     @objc private func googleButtonTapped() {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
     }
     
     //MARK: SETUP

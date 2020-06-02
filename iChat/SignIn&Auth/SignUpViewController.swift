@@ -38,6 +38,10 @@ class SignUpViewController: UIViewController {
         
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
+        emailTextField.addTarget(self, action: #selector(hideKeyboard), for: .primaryActionTriggered)
+        passwordTextField.addTarget(self, action: #selector(hideKeyboard), for: .primaryActionTriggered)
+        confirmPasswordTextField.addTarget(self, action: #selector(hideKeyboard), for: .primaryActionTriggered)
     }
     
     //MARK: USER EVENTS HANDLING
@@ -54,6 +58,10 @@ class SignUpViewController: UIViewController {
                 self.showAlert(title: "Ошибка", message: error.localizedDescription)
             }
         }
+    }
+    
+    @objc private func hideKeyboard() {
+        self.resignFirstResponder()
     }
     
     @objc private func loginButtonTapped() {
